@@ -5,35 +5,35 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {name: 🇷🇺 俄罗斯 A, server: p3.miaomiaowudelivery.com, port: 11007, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇷🇺 俄罗斯 B, server: p3.miaomiaowudelivery.com, port: 11107, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇨🇳 台湾 A, server: p3.miaomiaowudelivery.com, port: 11002, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇨🇳 台湾 B, server: p3.miaomiaowudelivery.com, port: 11102, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇨🇳 台湾 IEPL, server: p3.miaomiaowudelivery.com, port: 11112, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇨🇳 台湾 国际直连, server: hinet2.miaomiaowu-d.top, port: 61112, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇹🇷 土耳其 A, server: p3.miaomiaowudelivery.com, port: 11010, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇩🇪 德国 A, server: p3.miaomiaowudelivery.com, port: 11008, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇸🇬 新加坡 A, server: p3.miaomiaowudelivery.com, port: 11003, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇸🇬 新加坡 B, server: p3.miaomiaowudelivery.com, port: 11103, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇸🇬 新加坡 IEPL, server: p3.miaomiaowudelivery.com, port: 11113, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇸🇬 新加坡 国际直连, server: sgp2.miaomiaowu-d.top, port: 61114, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇯🇵 日本 A, server: p3.miaomiaowudelivery.com, port: 11005, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇯🇵 日本 B, server: p3.miaomiaowudelivery.com, port: 11105, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇯🇵 日本 国际直连, server: jp2.miaomiaowu-d.top, port: 61115, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇹🇭 泰国 A, server: p3.miaomiaowudelivery.com, port: 11013, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇺🇸 美国 A, server: p3.miaomiaowudelivery.com, port: 11004, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇺🇸 美国 B, server: p3.miaomiaowudelivery.com, port: 11104, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇺🇸 美国 IEPL, server: p3.miaomiaowudelivery.com, port: 11114, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇺🇸 美国 国际直连, server: us2.miaomiaowu-d.top, port: 61113, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇬🇧 英国 A, server: p3.miaomiaowudelivery.com, port: 11009, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇦🇷 阿根廷 A, server: p3.miaomiaowudelivery.com, port: 11012, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇰🇷 韩国 A, server: p3.miaomiaowudelivery.com, port: 11006, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇰🇷 韩国 B, server: p3.miaomiaowudelivery.com, port: 11106, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 香港 A, server: p3.miaomiaowudelivery.com, port: 11001, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 香港 B, server: p3.miaomiaowudelivery.com, port: 11101, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 香港 IEPL, server: p3.miaomiaowudelivery.com, port: 11111, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 香港 国际直连, server: hkt1.miaomiaowu-d.top, port: 61111, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 🇲🇾 马来西亚 A, server: p3.miaomiaowudelivery.com, port: 11014, type: vmess, uuid: 228d5b08-3888-3b3a-bc48-094c5d5b99fb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇷🇺 俄罗斯 A, server: p3.miaomiaowudelivery.com, port: 11007, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇷🇺 俄罗斯 B, server: p3.miaomiaowudelivery.com, port: 11107, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇨🇳 台湾 A, server: p3.miaomiaowudelivery.com, port: 11002, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇨🇳 台湾 B, server: p3.miaomiaowudelivery.com, port: 11102, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇨🇳 台湾 IEPL, server: p3.miaomiaowudelivery.com, port: 11112, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇨🇳 台湾 国际直连, server: hinet2.miaomiaowu-d.top, port: 61112, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇹🇷 土耳其 A, server: p3.miaomiaowudelivery.com, port: 11010, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇩🇪 德国 A, server: p3.miaomiaowudelivery.com, port: 11008, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇸🇬 新加坡 A, server: p3.miaomiaowudelivery.com, port: 11003, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇸🇬 新加坡 B, server: p3.miaomiaowudelivery.com, port: 11103, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇸🇬 新加坡 IEPL, server: p3.miaomiaowudelivery.com, port: 11113, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇸🇬 新加坡 国际直连, server: sgp2.miaomiaowu-d.top, port: 61114, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇯🇵 日本 A, server: p3.miaomiaowudelivery.com, port: 11005, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇯🇵 日本 B, server: p3.miaomiaowudelivery.com, port: 11105, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇯🇵 日本 国际直连, server: jp2.miaomiaowu-d.top, port: 61115, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇹🇭 泰国 A, server: p3.miaomiaowudelivery.com, port: 11013, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇺🇸 美国 A, server: p3.miaomiaowudelivery.com, port: 11004, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇺🇸 美国 B, server: p3.miaomiaowudelivery.com, port: 11104, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇺🇸 美国 IEPL, server: p3.miaomiaowudelivery.com, port: 11114, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇺🇸 美国 国际直连, server: us2.miaomiaowu-d.top, port: 61113, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇬🇧 英国 A, server: p3.miaomiaowudelivery.com, port: 11009, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇦🇷 阿根廷 A, server: p3.miaomiaowudelivery.com, port: 11012, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇰🇷 韩国 A, server: p3.miaomiaowudelivery.com, port: 11006, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇰🇷 韩国 B, server: p3.miaomiaowudelivery.com, port: 11106, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 香港 A, server: p3.miaomiaowudelivery.com, port: 11001, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 香港 B, server: p3.miaomiaowudelivery.com, port: 11101, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 香港 IEPL, server: p3.miaomiaowudelivery.com, port: 11111, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 香港 国际直连, server: hkt1.miaomiaowu-d.top, port: 61111, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 🇲🇾 马来西亚 A, server: p3.miaomiaowudelivery.com, port: 11014, type: vmess, uuid: 53129595-a43b-3fc1-9098-b0f72c9b0d80, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
 proxy-groups:
   - name: 🔰 节点选择
     type: select
