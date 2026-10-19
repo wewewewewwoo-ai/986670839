@@ -51,6 +51,20 @@ proxy-providers:
     override:
       udp: true
 
+  provider4:
+    type: http
+    url: "https://blog.ermao.net/sub/clash/ermao.net"
+    interval: 3600
+    path: ./proxy_provider/provider4.yaml
+    proxy: DIRECT
+    filter: "^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$"
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    override:
+      udp: true
+
 # ==================== 代理策略组 Proxy Groups ====================
 # 策略组候选项和节点注入逻辑与当前 Custom_Clash.ini 保持一致。
 proxy-groups:
@@ -71,6 +85,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
 
   - name: "♻️ 自动选择"
     type: url-test
@@ -81,6 +96,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
 
   - name: "💬 即时通讯"
     type: select
@@ -115,6 +131,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
 
   - name: "🚀 GitHub"
     type: select
@@ -134,6 +151,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
 
   - name: "🤖 ChatGPT"
     type: select
@@ -152,6 +170,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
 
   - name: "🤖 AI服务"
     type: select
@@ -170,6 +189,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
 
   - name: "🎶 TikTok"
     type: select
@@ -188,6 +208,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
 
   - name: "📹 YouTube"
     type: select
@@ -206,6 +227,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
 
   - name: "🎥 Netflix"
     type: select
@@ -224,6 +246,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
 
   - name: "🎥 DisneyPlus"
     type: select
@@ -242,6 +265,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
 
   - name: "🎥 HBO"
     type: select
@@ -260,6 +284,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
 
   - name: "🎥 PrimeVideo"
     type: select
@@ -278,6 +303,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
 
   - name: "🎥 AppleTV+"
     type: select
@@ -297,6 +323,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
 
   - name: "🎥 Emby"
     type: select
@@ -316,6 +343,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
 
   - name: "🎻 Spotify"
     type: select
@@ -335,6 +363,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
 
   - name: "📺 Bahamut"
     type: select
@@ -349,6 +378,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
 
   - name: "🌎 国外媒体"
     type: select
@@ -367,6 +397,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
 
   - name: "🛒 国外电商"
     type: select
@@ -386,6 +417,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
 
   - name: "📢 谷歌FCM"
     type: select
@@ -419,6 +451,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
 
   - name: "🍎 苹果服务"
     type: select
@@ -438,6 +471,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
 
   - name: "Ⓜ️ 微软服务"
     type: select
@@ -457,6 +491,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
 
   - name: "🎮 游戏平台"
     type: select
@@ -476,6 +511,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
 
   - name: "🎮 Steam"
     type: select
@@ -495,6 +531,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
 
   - name: "🚀 测速工具"
     type: select
@@ -514,6 +551,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
 
   - name: "🐟 漏网之鱼"
     type: select
@@ -533,6 +571,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
 
   - name: "🔀 非标端口"
     type: select
@@ -551,6 +590,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
     interval: 300
     tolerance: 50
 
@@ -562,6 +602,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
     interval: 300
     tolerance: 50
 
@@ -573,6 +614,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
     interval: 300
     tolerance: 50
 
@@ -584,6 +626,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
     interval: 300
     tolerance: 50
 
@@ -595,6 +638,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
     interval: 300
     tolerance: 50
 
@@ -606,6 +650,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
     interval: 300
     tolerance: 50
 
