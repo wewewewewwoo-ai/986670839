@@ -9,7 +9,6 @@
 # provider1 用于加载机场订阅；多订阅用户可复制并依次命名为 provider2、provider3……
 # 新增 Provider 后，还需将其加入相关策略组的 use 列表。
 proxy-providers:
-proxy-providers:
   provider1:
     type: http
     url: "https://sunmiao4458.github.io/free-proxy-airport/clash.yaml"
