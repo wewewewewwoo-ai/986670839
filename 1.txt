@@ -1,5 +1,5 @@
-# Custom_OpenClash_Rules 精简版
-# 无 FALLBACK、无 AI-POOL、无全球直连组，规则极简
+# Custom_OpenClash_Rules
+# 极简英文策略组版（无 rules，方便覆写）
 
 # ==================== 代理提供者 Proxy Providers ====================
 proxy-providers:
@@ -89,8 +89,51 @@ proxy-providers:
 
 # ==================== 代理策略组 Proxy Groups ====================
 proxy-groups:
+  # 手动选择（最前）
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "AUTO-FAST"
+      - "HK-POOL"
+      - "JP-POOL"
+      - "US-POOL"
+      - "SG-POOL"
+      - "TW-POOL"
+      - "KR-POOL"
+      - "DE-POOL"
+      - "CA-POOL"
+      - "AU-POOL"
+      - "GB-POOL"
+      - "NL-POOL"
+      - "FR-POOL"
+      - "IN-POOL"
+      - "OTHER"
+      - DIRECT
+
+  # 自动选择（第二）
+  - name: "AUTO-FAST"
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "HK-POOL"
+      - "JP-POOL"
+      - "US-POOL"
+      - "SG-POOL"
+      - "TW-POOL"
+      - "KR-POOL"
+      - "DE-POOL"
+      - "CA-POOL"
+      - "AU-POOL"
+      - "GB-POOL"
+      - "NL-POOL"
+      - "FR-POOL"
+      - "IN-POOL"
+      - "OTHER"
+
   # 香港
-  - name: "🇭🇰 香港"
+  - name: "HK-POOL"
     type: url-test
     url: https://www.gstatic.com/generate_204
     interval: 300
@@ -105,7 +148,7 @@ proxy-groups:
       - provider6
 
   # 日本
-  - name: "🇯🇵 日本"
+  - name: "JP-POOL"
     type: url-test
     url: https://www.gstatic.com/generate_204
     interval: 300
@@ -120,7 +163,7 @@ proxy-groups:
       - provider6
 
   # 美国
-  - name: "🇺🇸 美国"
+  - name: "US-POOL"
     type: url-test
     url: https://www.gstatic.com/generate_204
     interval: 300
@@ -135,7 +178,7 @@ proxy-groups:
       - provider6
 
   # 新加坡
-  - name: "🇸🇬 新加坡"
+  - name: "SG-POOL"
     type: url-test
     url: https://www.gstatic.com/generate_204
     interval: 300
@@ -150,7 +193,7 @@ proxy-groups:
       - provider6
 
   # 台湾
-  - name: "🇹🇼 台湾"
+  - name: "TW-POOL"
     type: url-test
     url: https://www.gstatic.com/generate_204
     interval: 300
@@ -165,7 +208,7 @@ proxy-groups:
       - provider6
 
   # 韩国
-  - name: "🇰🇷 韩国"
+  - name: "KR-POOL"
     type: url-test
     url: https://www.gstatic.com/generate_204
     interval: 300
@@ -180,7 +223,7 @@ proxy-groups:
       - provider6
 
   # 德国
-  - name: "🇩🇪 德国"
+  - name: "DE-POOL"
     type: url-test
     url: https://www.gstatic.com/generate_204
     interval: 300
@@ -195,7 +238,7 @@ proxy-groups:
       - provider6
 
   # 加拿大
-  - name: "🇨🇦 加拿大"
+  - name: "CA-POOL"
     type: url-test
     url: https://www.gstatic.com/generate_204
     interval: 300
@@ -210,7 +253,7 @@ proxy-groups:
       - provider6
 
   # 澳大利亚
-  - name: "🇦🇺 澳大利亚"
+  - name: "AU-POOL"
     type: url-test
     url: https://www.gstatic.com/generate_204
     interval: 300
@@ -225,7 +268,7 @@ proxy-groups:
       - provider6
 
   # 英国
-  - name: "🇬🇧 英国"
+  - name: "GB-POOL"
     type: url-test
     url: https://www.gstatic.com/generate_204
     interval: 300
@@ -240,7 +283,7 @@ proxy-groups:
       - provider6
 
   # 荷兰
-  - name: "🇳🇱 荷兰"
+  - name: "NL-POOL"
     type: url-test
     url: https://www.gstatic.com/generate_204
     interval: 300
@@ -255,7 +298,7 @@ proxy-groups:
       - provider6
 
   # 法国
-  - name: "🇫🇷 法国"
+  - name: "FR-POOL"
     type: url-test
     url: https://www.gstatic.com/generate_204
     interval: 300
@@ -270,7 +313,7 @@ proxy-groups:
       - provider6
 
   # 印度
-  - name: "🇮🇳 印度"
+  - name: "IN-POOL"
     type: url-test
     url: https://www.gstatic.com/generate_204
     interval: 300
@@ -284,8 +327,8 @@ proxy-groups:
       - provider5
       - provider6
 
-  # 未知（只包含未被国家匹配的剩余节点）
-  - name: "🌐 未知"
+  # 未知（剩余节点）
+  - name: "OTHER"
     type: url-test
     url: https://www.gstatic.com/generate_204
     interval: 300
@@ -298,54 +341,3 @@ proxy-groups:
       - provider4
       - provider5
       - provider6
-
-  # 自动选择（只在国家组之间测速）
-  - name: "♻️ AUTO"
-    type: url-test
-    url: https://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    proxies:
-      - "🇭🇰 香港"
-      - "🇯🇵 日本"
-      - "🇺🇸 美国"
-      - "🇸🇬 新加坡"
-      - "🇹🇼 台湾"
-      - "🇰🇷 韩国"
-      - "🇩🇪 德国"
-      - "🇨🇦 加拿大"
-      - "🇦🇺 澳大利亚"
-      - "🇬🇧 英国"
-      - "🇳🇱 荷兰"
-      - "🇫🇷 法国"
-      - "🇮🇳 印度"
-      - "🌐 未知"
-
-  # 手动选择（最前）
-  - name: "🚀 手动选择"
-    type: select
-    proxies:
-      - "♻️ AUTO"
-      - "🇭🇰 香港"
-      - "🇯🇵 日本"
-      - "🇺🇸 美国"
-      - "🇸🇬 新加坡"
-      - "🇹🇼 台湾"
-      - "🇰🇷 韩国"
-      - "🇩🇪 德国"
-      - "🇨🇦 加拿大"
-      - "🇦🇺 澳大利亚"
-      - "🇬🇧 英国"
-      - "🇳🇱 荷兰"
-      - "🇫🇷 法国"
-      - "🇮🇳 印度"
-      - "🌐 未知"
-      - DIRECT
-
-# ==================== 分流规则（极简） ====================
-rules:
-  - "GEOSITE,private,DIRECT"
-  - "GEOIP,private,DIRECT,no-resolve"
-  - "GEOSITE,cn,DIRECT"
-  - "GEOIP,cn,DIRECT,no-resolve"
-  - "MATCH,🚀 手动选择"
