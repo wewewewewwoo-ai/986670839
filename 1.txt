@@ -343,4 +343,5 @@ proxy-groups:
       - provider6
 
 
-  - "MATCH, PROXY"
+  rules:
+- "MATCH,PROXY"
