@@ -12,7 +12,7 @@ proxy-providers:
     filter: "^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|防范|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|中国|CN|China|上海|北京|广州|深圳|杭州|成都|武汉|西安|回国|中转|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$"
     health-check:
       enable: true
-      url: url: https://cp.cloudflare.com/generate_204
+      url: https://cp.cloudflare.com/generate_204
       interval: 300
     override:
       udp: true
@@ -26,7 +26,7 @@ proxy-providers:
     filter: "^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|防范|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|中国|CN|China|上海|北京|广州|深圳|杭州|成都|武汉|西安|回国|中转|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$"
     health-check:
       enable: true
-      url: url: https://cp.cloudflare.com/generate_204
+      url: https://cp.cloudflare.com/generate_204
       interval: 300
     override:
       udp: true
@@ -40,7 +40,7 @@ proxy-providers:
     filter: "^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|防范|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|中国|CN|China|上海|北京|广州|深圳|杭州|成都|武汉|西安|回国|中转|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$"
     health-check:
       enable: true
-      url: url: https://cp.cloudflare.com/generate_204
+      url: https://cp.cloudflare.com/generate_204
       interval: 300
     override:
       udp: true
@@ -54,7 +54,7 @@ proxy-providers:
     filter: "^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|防范|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|中国|CN|China|上海|北京|广州|深圳|杭州|成都|武汉|西安|回国|中转|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$"
     health-check:
       enable: true
-      url: url: https://cp.cloudflare.com/generate_204
+      url: https://cp.cloudflare.com/generate_204
       interval: 300
     override:
       udp: true
@@ -68,7 +68,7 @@ proxy-providers:
     filter: "^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|防范|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|中国|CN|China|上海|北京|广州|深圳|杭州|成都|武汉|西安|回国|中转|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$"
     health-check:
       enable: true
-      url: url: https://cp.cloudflare.com/generate_204
+      url: https://cp.cloudflare.com/generate_204
       interval: 300
     override:
       udp: true
@@ -82,7 +82,8 @@ proxy-providers:
     filter: "^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|防范|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|中国|CN|China|上海|北京|广州|深圳|杭州|成都|武汉|西安|回国|中转|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$"
     health-check:
       enable: true
-      url: url: https://cp.cloudflare.com/generate_204
+      url:
+https://cp.cloudflare.com/generate_204
       interval: 300
     override:
       udp: true
