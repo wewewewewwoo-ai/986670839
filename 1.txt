@@ -1,5 +1,5 @@
 # Custom_OpenClash_Rules
-# 极简英文策略组版（无 rules，方便覆写）
+# 英文策略组 + 完整规则 + 优化过滤
 
 # ==================== 代理提供者 Proxy Providers ====================
 proxy-providers:
@@ -9,7 +9,7 @@ proxy-providers:
     interval: 3600
     path: ./proxy_provider/provider1.yaml
     proxy: DIRECT
-    filter: "^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|防范|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$"
+    filter: "^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|防范|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|中国|CN|China|上海|北京|广州|深圳|杭州|成都|武汉|西安|回国|中转|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$"
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
@@ -23,7 +23,7 @@ proxy-providers:
     interval: 3600
     path: ./proxy_provider/provider2.yaml
     proxy: DIRECT
-    filter: "^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|防范|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$"
+    filter: "^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|防范|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|中国|CN|China|上海|北京|广州|深圳|杭州|成都|武汉|西安|回国|中转|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$"
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
@@ -37,7 +37,7 @@ proxy-providers:
     interval: 3600
     path: ./proxy_provider/provider3.yaml
     proxy: DIRECT
-    filter: "^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|防范|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$"
+    filter: "^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|防范|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|中国|CN|China|上海|北京|广州|深圳|杭州|成都|武汉|西安|回国|中转|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$"
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
@@ -51,7 +51,7 @@ proxy-providers:
     interval: 3600
     path: ./proxy_provider/provider4.yaml
     proxy: DIRECT
-    filter: "^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|防范|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$"
+    filter: "^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|防范|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|中国|CN|China|上海|北京|广州|深圳|杭州|成都|武汉|西安|回国|中转|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$"
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
@@ -65,7 +65,7 @@ proxy-providers:
     interval: 3600
     path: ./proxy_provider/provider5.yaml
     proxy: DIRECT
-    filter: "^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|防范|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$"
+    filter: "^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|防范|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|中国|CN|China|上海|北京|广州|深圳|杭州|成都|武汉|西安|回国|中转|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$"
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
@@ -79,7 +79,7 @@ proxy-providers:
     interval: 3600
     path: ./proxy_provider/provider6.yaml
     proxy: DIRECT
-    filter: "^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|防范|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$"
+    filter: "^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|防范|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|中国|CN|China|上海|北京|广州|深圳|杭州|成都|武汉|西安|回国|中转|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$"
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
@@ -110,7 +110,7 @@ proxy-groups:
       - "OTHER"
       - DIRECT
 
-  # 自动选择（第二）
+  # 自动选择
   - name: "AUTO-FAST"
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -297,13 +297,13 @@ proxy-groups:
       - provider5
       - provider6
 
-  # 法国
+  # 法国（已修复 free 误匹配问题）
   - name: "FR-POOL"
     type: url-test
     url: https://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    filter: '(?i)(🇫🇷|法|法国|FR|France|Paris|巴黎)'
+    filter: '(?i)(🇫🇷|法国|France|FRANCE|\bFR\b|Paris|巴黎)'
     use:
       - provider1
       - provider2
@@ -333,7 +333,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    filter: '^(?!.*(🇭🇰|港|HK|Hong|日本|JP|Japan|🇺🇸|美|US|USA|新加坡|坡|狮城|SG|Singapore|🇹🇼|台|台湾|TW|Taiwan|🇰🇷|韩|韓|韩国|KR|Korea|🇩🇪|德|德国|DE|Germany|🇨🇦|加|加拿大|CA|Canada|🇦🇺|澳|澳大利亚|澳洲|AU|Australia|🇬🇧|英|英国|UK|Britain|🇳🇱|荷|荷兰|NL|Netherlands|🇫🇷|法|法国|FR|France|🇮🇳|印|印度|IN|India)).*$'
+    filter: '^(?!.*(🇭🇰|港|HK|Hong|🇯🇵|日本|JP|Japan|🇺🇸|美|US|USA|🇸🇬|新加坡|坡|狮城|SG|Singapore|🇹🇼|台|台湾|TW|Taiwan|🇰🇷|韩|韓|韩国|KR|Korea|🇩🇪|德|德国|DE|Germany|🇨🇦|加|加拿大|CA|Canada|🇦🇺|澳|澳大利亚|澳洲|AU|Australia|🇬🇧|英|英国|UK|Britain|🇳🇱|荷|荷兰|NL|Netherlands|🇫🇷|法国|France|\bFR\b|🇮🇳|印|印度|IN|India)).*$'
     use:
       - provider1
       - provider2
@@ -342,6 +342,7 @@ proxy-groups:
       - provider5
       - provider6
 
+# ==================== 规则提供者 Rule Providers ====================
 rule-providers:
   Nonstandard_Port_Direct:
     behavior: classical
@@ -349,49 +350,57 @@ rule-providers:
     type: http
     url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Port_Direct.yaml"
     format: yaml
+
   Custom_Direct_Domain:
     behavior: domain
     interval: 1800
     type: http
     url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Direct_Domain.mrs"
     format: mrs
+
   Custom_Direct_IP:
     behavior: ipcidr
     interval: 28800
     type: http
     url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Direct_IP.mrs"
     format: mrs
+
   Custom_Direct_Port:
     behavior: classical
     interval: 28800
     type: http
     url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Direct_Classical_Port.yaml"
     format: yaml
+
   Custom_Proxy_Domain:
     behavior: domain
     interval: 28800
     type: http
     url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Proxy_Domain.mrs"
     format: mrs
+
   Custom_Proxy_IP:
     behavior: ipcidr
     interval: 28800
     type: http
     url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Proxy_IP.mrs"
     format: mrs
+
   Steam_CDN_Domain:
     behavior: domain
     interval: 28800
     type: http
     url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Steam_CDN_Domain.mrs"
     format: mrs
+
   Steam_CDN_IP:
     behavior: ipcidr
     interval: 28800
     type: http
     url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Steam_CDN_IP.mrs"
     format: mrs
-    
+
+# ==================== 分流规则 Rules ====================
 rules:
   # ===== 私有网络 / 自定义直连，必须最前 =====
   - "GEOSITE,private,DIRECT"
