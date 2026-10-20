@@ -344,4 +344,4 @@ proxy-groups:
 
 
   rules:
-- "MATCH,PROXY"
+    - "MATCH,PROXY"
