@@ -1,5 +1,5 @@
-# Custom_OpenClash_Rules 性能优化版
-# AUTO 只选择国家组，避免上千节点直接展开导致卡顿
+# Custom_OpenClash_Rules 性能优化版（修正未知组）
+# 「未知」只包含未被国家组匹配的剩余节点
 
 # ==================== 代理提供者 Proxy Providers ====================
 proxy-providers:
@@ -284,13 +284,13 @@ proxy-groups:
       - provider5
       - provider6
 
-  # 未知 / 其他节点（没匹配到以上国家的）
+  # 未知（只包含未被以上国家匹配到的剩余节点）
   - name: "🌐 未知"
     type: url-test
     url: https://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    # 这里不设 filter，把所有节点都放进来，方便兜底
+    filter: '^(?!.*(🇭🇰|港|HK|Hong|日本|JP|Japan|🇺🇸|美|US|USA|新加坡|坡|狮城|SG|Singapore|🇹🇼|台|台湾|TW|Taiwan|🇰🇷|韩|韓|韩国|KR|Korea|🇩🇪|德|德国|DE|Germany|🇨🇦|加|加拿大|CA|Canada|🇦🇺|澳|澳大利亚|澳洲|AU|Australia|🇬🇧|英|英国|UK|Britain|🇳🇱|荷|荷兰|NL|Netherlands|🇫🇷|法|法国|FR|France|🇮🇳|印|印度|IN|India)).*$'
     use:
       - provider1
       - provider2
@@ -314,8 +314,8 @@ proxy-groups:
       - provider5
       - provider6
 
-  # ==================== 核心策略组（性能关键） ====================
-  # AUTO 只选择「国家组」，不再直接展开上千节点
+  # ==================== 核心策略组 ====================
+  # AUTO 只在国家组之间选择（不展开节点）
   - name: "♻️ AUTO"
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -360,7 +360,7 @@ proxy-groups:
       - "🇮🇳 印度"
       - "🌐 未知"
 
-  # 手动选择（主入口）
+  # 手动选择
   - name: "🚀 手动选择"
     type: select
     proxies:
@@ -394,14 +394,12 @@ rules:
   - "GEOSITE,private,🎯 全球直连"
   - "GEOIP,private,🎯 全球直连,no-resolve"
 
-  # AI 相关
   - "GEOSITE,openai,🤖 AI-POOL"
   - "DOMAIN-SUFFIX,chatgpt.com,🤖 AI-POOL"
   - "DOMAIN-SUFFIX,claude.ai,🤖 AI-POOL"
   - "DOMAIN-SUFFIX,anthropic.com,🤖 AI-POOL"
   - "GEOSITE,category-ai-!cn,🤖 AI-POOL"
 
-  # 常用服务
   - "GEOSITE,github,🚀 手动选择"
   - "GEOSITE,youtube,🚀 手动选择"
   - "GEOSITE,netflix,🚀 手动选择"
@@ -412,12 +410,9 @@ rules:
   - "GEOSITE,apple,🎯 全球直连"
   - "GEOSITE,microsoft,🎯 全球直连"
 
-  # 国内直连
   - "GEOSITE,cn,🎯 全球直连"
   - "GEOIP,cn,🎯 全球直连,no-resolve"
 
-  # GFW
   - "GEOSITE,gfw,🚀 手动选择"
 
-  # 最终
   - "MATCH,🚀 手动选择"
