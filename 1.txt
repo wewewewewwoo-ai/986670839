@@ -228,7 +228,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    filter: '(?i)(🇩🇪|德|德国|DE|Germany|GERMANY|DEU|法兰克福|柏林|慕尼黑|Hamburg|Frankfurt)'
+    filter: '(?i)(🇩🇪|德|德国|DE_s|Germany|GERMANY|DEU|法兰克福|柏林|慕尼黑|Hamburg|Frankfurt)'
     use:
       - provider1
       - provider2
