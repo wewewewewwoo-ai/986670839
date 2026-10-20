@@ -343,5 +343,99 @@ proxy-groups:
       - provider6
 
 
+# ==================== 规则提供者 Rule Providers ====================
+rule-providers:
+  Custom_Direct_Domain:
+    behavior: domain
+    interval: 1800
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Direct_Domain.mrs"
+    format: mrs
+
+  Custom_Direct_IP:
+    behavior: ipcidr
+    interval: 28800
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Direct_IP.mrs"
+    format: mrs
+
+  Custom_Direct_Port:
+    behavior: classical
+    interval: 28800
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Direct_Classical_Port.yaml"
+    format: yaml
+
+  Custom_Proxy_Domain:
+    behavior: domain
+    interval: 28800
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Proxy_Domain.mrs"
+    format: mrs
+
+  Custom_Proxy_IP:
+    behavior: ipcidr
+    interval: 28800
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Proxy_IP.mrs"
+    format: mrs
+
+  Steam_CDN_Domain:
+    behavior: domain
+    interval: 28800
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Steam_CDN_Domain.mrs"
+    format: mrs
+
+  Steam_CDN_IP:
+    behavior: ipcidr
+    interval: 28800
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Steam_CDN_IP.mrs"
+    format: mrs
+
+# ==================== 分流规则 Rules ====================
 rules:
+  # ===== 私有网络 / 自定义直连（必须最前）=====
+  - "GEOSITE,private,DIRECT"
+  - "GEOIP,private,DIRECT,no-resolve"
+  - "RULE-SET,Custom_Direct_Domain,DIRECT"
+  - "RULE-SET,Custom_Direct_IP,DIRECT,no-resolve"
+  - "RULE-SET,Custom_Direct_Port,DIRECT"
+
+  # ===== 自定义代理 =====
+  - "RULE-SET,Custom_Proxy_Domain,PROXY"
+  - "RULE-SET,Custom_Proxy_IP,PROXY,no-resolve"
+
+  # ===== 国内游戏 & Steam CDN 直连 =====
+  - "GEOSITE,category-games@cn,DIRECT"
+  - "RULE-SET,Steam_CDN_Domain,DIRECT"
+  - "RULE-SET,Steam_CDN_IP,DIRECT,no-resolve"
+  - "GEOSITE,category-game-platforms-download,DIRECT"
+  - "GEOSITE,category-public-tracker,DIRECT"
+
+  # ===== 必须代理的服务 =====
+  - "GEOSITE,github,PROXY"
+  - "GEOSITE,google,PROXY"
+  - "GEOSITE,youtube,PROXY"
+  - "GEOSITE,tiktok,PROXY"
+  - "GEOSITE,spotify,PROXY"
+  - "GEOSITE,category-ai-!cn,PROXY"
+  - "GEOSITE,category-dev,PROXY"
+  - "GEOSITE,category-social-media-!cn,PROXY"
+  - "GEOSITE,gfw,PROXY"
+
+  # ===== GEOIP 补充 =====
+  - "GEOIP,telegram,PROXY,no-resolve"
+  - "GEOIP,twitter,PROXY,no-resolve"
+  - "GEOIP,google,PROXY,no-resolve"
+
+  # ===== Microsoft 基础服务直连 =====
+  - "GEOSITE,microsoft,DIRECT"
+
+  # ===== 国内兜底 =====
+  - "GEOSITE,cn,DIRECT"
+  - "GEOIP,cn,DIRECT,no-resolve"
+
+  # ===== 漏网之鱼 =====
   - "MATCH,PROXY"
