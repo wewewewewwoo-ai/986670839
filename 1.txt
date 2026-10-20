@@ -341,3 +341,146 @@ proxy-groups:
       - provider4
       - provider5
       - provider6
+
+rule-providers:
+  Nonstandard_Port_Direct:
+    behavior: classical
+    interval: 28800
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Port_Direct.yaml"
+    format: yaml
+  Custom_Direct_Domain:
+    behavior: domain
+    interval: 1800
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Direct_Domain.mrs"
+    format: mrs
+  Custom_Direct_IP:
+    behavior: ipcidr
+    interval: 28800
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Direct_IP.mrs"
+    format: mrs
+  Custom_Direct_Port:
+    behavior: classical
+    interval: 28800
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Direct_Classical_Port.yaml"
+    format: yaml
+  Custom_Proxy_Domain:
+    behavior: domain
+    interval: 28800
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Proxy_Domain.mrs"
+    format: mrs
+  Custom_Proxy_IP:
+    behavior: ipcidr
+    interval: 28800
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Proxy_IP.mrs"
+    format: mrs
+  Steam_CDN_Domain:
+    behavior: domain
+    interval: 28800
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Steam_CDN_Domain.mrs"
+    format: mrs
+  Steam_CDN_IP:
+    behavior: ipcidr
+    interval: 28800
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Steam_CDN_IP.mrs"
+    format: mrs
+    
+rules:
+  # ===== 私有网络 / 自定义直连，必须最前 =====
+  - "GEOSITE,private,DIRECT"
+  - "GEOIP,private,DIRECT,no-resolve"
+  - "RULE-SET,Custom_Direct_Domain,DIRECT"
+  - "RULE-SET,Custom_Direct_IP,DIRECT,no-resolve"
+  - "RULE-SET,Custom_Direct_Port,DIRECT"
+
+  # ===== 自定义代理 =====
+  - "RULE-SET,Custom_Proxy_Domain,PROXY"
+  - "RULE-SET,Custom_Proxy_IP,PROXY,no-resolve"
+
+  # ===== 国内游戏、Steam 下载 CDN、公共 Tracker 优先直连 =====
+  - "GEOSITE,category-games@cn,DIRECT"
+  - "RULE-SET,Steam_CDN_Domain,DIRECT"
+  - "RULE-SET,Steam_CDN_IP,DIRECT,no-resolve"
+  - "GEOSITE,category-game-platforms-download,DIRECT"
+  - "GEOSITE,category-public-tracker,DIRECT"
+
+  # ===== 通讯 / 社交 / AI / 开发 / 学术等代理优先 =====
+  - "GEOSITE,zoom,PROXY"
+  - "GEOSITE,category-communication,PROXY"
+  - "GEOSITE,category-social-media-!cn,PROXY"
+  - "GEOSITE,talkatone,PROXY"
+  - "GEOSITE,openai,PROXY"
+  - "GEOSITE,onedrive,PROXY"
+  - "GEOSITE,bing,PROXY"
+  - "GEOSITE,category-ai-!cn,PROXY"
+
+  # 国内 AI 默认直连，必须在 cn 兜底之前
+  - "GEOSITE,category-ai-cn,DIRECT"
+
+  - "GEOSITE,github,PROXY"
+  - "GEOSITE,category-dev,PROXY"
+
+  # 国外学术资源先于 Google 等大类匹配
+  - "GEOSITE,category-scholar-!cn,PROXY"
+
+  # ===== 测速 / 游戏平台 / 流媒体 / 音乐 =====
+  - "GEOSITE,category-speedtest,PROXY"
+  - "GEOSITE,steam,PROXY"
+  - "GEOSITE,youtube,PROXY"
+  - "GEOSITE,apple-tvplus,PROXY"
+
+  # 苹果、微软基础服务走直连；特殊服务已在上面单独代理
+  - "GEOSITE,apple,DIRECT"
+  - "GEOSITE,microsoft,DIRECT"
+
+  - "GEOSITE,googlefcm,PROXY"
+  - "GEOSITE,google,PROXY"
+  - "GEOSITE,tiktok,PROXY"
+  - "GEOSITE,netflix,PROXY"
+  - "GEOSITE,disney,PROXY"
+  - "GEOSITE,hbo,PROXY"
+  - "GEOSITE,primevideo,PROXY"
+
+  # Emby 按自建媒体默认直连；若你的 Emby 需要代理，把这里改成 PROXY
+  - "GEOSITE,category-emby,DIRECT"
+
+  - "GEOSITE,spotify,PROXY"
+  - "GEOSITE,bahamut,PROXY"
+  - "GEOSITE,category-games,PROXY"
+  - "GEOSITE,category-media,PROXY"
+  - "GEOSITE,category-entertainment,PROXY"
+
+  # PT 站点默认直连；若需要代理访问 PT 网页，可改 PROXY
+  - "GEOSITE,category-pt,DIRECT"
+
+  - "GEOSITE,paypal,PROXY"
+  - "GEOSITE,category-ecommerce,PROXY"
+  - "GEOSITE,category-cryptocurrency,PROXY"
+  - "GEOSITE,gfw,PROXY"
+
+  # ===== GEOIP 补充 =====
+  - "GEOIP,telegram,PROXY,no-resolve"
+  - "GEOIP,twitter,PROXY,no-resolve"
+  - "GEOIP,facebook,PROXY,no-resolve"
+  - "GEOIP,google,PROXY,no-resolve"
+  - "GEOIP,netflix,PROXY,no-resolve"
+
+  # 原注释：未命中的国外域名默认直连；如需全代理可改 PROXY
+  - "GEOSITE,geolocation-!cn,DIRECT"
+
+  # ===== 国内兜底 =====
+  - "GEOSITE,cn,DIRECT"
+  - "GEOIP,cn,DIRECT,no-resolve"
+
+  # ===== 非标端口直连 =====
+  - "RULE-SET,Nonstandard_Port_Direct,DIRECT"
+
+  # ===== 漏网之鱼 =====
+  - "MATCH,PROXY"
