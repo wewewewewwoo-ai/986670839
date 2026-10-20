@@ -1,5 +1,5 @@
-# Custom_OpenClash_Rules 性能优化版（修正未知组）
-# 「未知」只包含未被国家组匹配的剩余节点
+# Custom_OpenClash_Rules 精简版
+# 无 FALLBACK、无 AI-POOL、无全球直连组，规则极简
 
 # ==================== 代理提供者 Proxy Providers ====================
 proxy-providers:
@@ -284,7 +284,7 @@ proxy-groups:
       - provider5
       - provider6
 
-  # 未知（只包含未被以上国家匹配到的剩余节点）
+  # 未知（只包含未被国家匹配的剩余节点）
   - name: "🌐 未知"
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -299,23 +299,7 @@ proxy-groups:
       - provider5
       - provider6
 
-  # AI 专用池
-  - name: "🤖 AI-POOL"
-    type: url-test
-    url: https://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    filter: '(?i)(🇺🇸|美|US|USA|新加坡|坡|狮城|SG|Singapore|加拿大|CA|Canada|德国|DE|Germany|荷兰|NL|Netherlands|法国|FR|France|英国|UK|Britain|澳大利亚|AU|Australia)'
-    use:
-      - provider1
-      - provider2
-      - provider3
-      - provider4
-      - provider5
-      - provider6
-
-  # ==================== 核心策略组 ====================
-  # AUTO 只在国家组之间选择（不展开节点）
+  # 自动选择（只在国家组之间测速）
   - name: "♻️ AUTO"
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -336,36 +320,12 @@ proxy-groups:
       - "🇫🇷 法国"
       - "🇮🇳 印度"
       - "🌐 未知"
-      - "🤖 AI-POOL"
 
-  # 故障转移
-  - name: "🔀 FALLBACK"
-    type: fallback
-    url: https://www.gstatic.com/generate_204
-    interval: 300
-    proxies:
-      - "♻️ AUTO"
-      - "🇭🇰 香港"
-      - "🇯🇵 日本"
-      - "🇺🇸 美国"
-      - "🇸🇬 新加坡"
-      - "🇹🇼 台湾"
-      - "🇰🇷 韩国"
-      - "🇩🇪 德国"
-      - "🇨🇦 加拿大"
-      - "🇦🇺 澳大利亚"
-      - "🇬🇧 英国"
-      - "🇳🇱 荷兰"
-      - "🇫🇷 法国"
-      - "🇮🇳 印度"
-      - "🌐 未知"
-
-  # 手动选择
+  # 手动选择（最前）
   - name: "🚀 手动选择"
     type: select
     proxies:
       - "♻️ AUTO"
-      - "🔀 FALLBACK"
       - "🇭🇰 香港"
       - "🇯🇵 日本"
       - "🇺🇸 美国"
@@ -380,39 +340,12 @@ proxy-groups:
       - "🇫🇷 法国"
       - "🇮🇳 印度"
       - "🌐 未知"
-      - "🤖 AI-POOL"
-      - "🎯 全球直连"
-
-  # 直连
-  - name: "🎯 全球直连"
-    type: select
-    proxies:
       - DIRECT
 
-# ==================== 分流规则 Rules ====================
+# ==================== 分流规则（极简） ====================
 rules:
-  - "GEOSITE,private,🎯 全球直连"
-  - "GEOIP,private,🎯 全球直连,no-resolve"
-
-  - "GEOSITE,openai,🤖 AI-POOL"
-  - "DOMAIN-SUFFIX,chatgpt.com,🤖 AI-POOL"
-  - "DOMAIN-SUFFIX,claude.ai,🤖 AI-POOL"
-  - "DOMAIN-SUFFIX,anthropic.com,🤖 AI-POOL"
-  - "GEOSITE,category-ai-!cn,🤖 AI-POOL"
-
-  - "GEOSITE,github,🚀 手动选择"
-  - "GEOSITE,youtube,🚀 手动选择"
-  - "GEOSITE,netflix,🚀 手动选择"
-  - "GEOSITE,disney,🚀 手动选择"
-  - "GEOSITE,spotify,🚀 手动选择"
-  - "GEOSITE,tiktok,🚀 手动选择"
-  - "GEOSITE,google,🚀 手动选择"
-  - "GEOSITE,apple,🎯 全球直连"
-  - "GEOSITE,microsoft,🎯 全球直连"
-
-  - "GEOSITE,cn,🎯 全球直连"
-  - "GEOIP,cn,🎯 全球直连,no-resolve"
-
-  - "GEOSITE,gfw,🚀 手动选择"
-
+  - "GEOSITE,private,DIRECT"
+  - "GEOIP,private,DIRECT,no-resolve"
+  - "GEOSITE,cn,DIRECT"
+  - "GEOIP,cn,DIRECT,no-resolve"
   - "MATCH,🚀 手动选择"
