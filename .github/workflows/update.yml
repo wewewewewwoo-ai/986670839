@@ -1,0 +1,74 @@
+name: Update 1.txt with filtered nodes
+
+on:
+  schedule:
+    - cron: '12 */6 * * *'   # 每 6 小时的第 12 分钟运行一次
+  workflow_dispatch:          # 允许手动触发测试
+
+permissions:
+  contents: write             # 允许 Actions 推送文件到仓库
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: 'stable'
+
+      - name: Install clash-speedtest
+        run: go install github.com/faceair/clash-speedtest@latest
+
+      - name: Run speedtest and filter nodes
+        run: |
+          $(go env GOPATH)/bin/clash-speedtest \
+            -c "https://raw.githubusercontent.com/wewewewewwoo-ai/986670839/main/v.txt" \
+            -output 1.txt \
+            -max-latency 800ms \
+            -min-download-speed 5
+
+      - name: Safety check - file must exist and not be empty
+        run: |
+          if [ ! -f 1.txt ]; then
+            echo "❌ 1.txt 不存在，工具可能运行失败，中止"
+            exit 1
+          fi
+          if [ ! -s 1.txt ]; then
+            echo "❌ 1.txt 为空，中止，保留旧文件"
+            exit 1
+          fi
+          echo "✅ 1.txt 存在且非空"
+
+      - name: Safety check - must contain valid proxies
+        run: |
+          # 检查 proxies: 段下是否有至少一个节点条目（以 "- " 或 "  - " 开头）
+          NODE_COUNT=$(grep -cE '^\s*-\s*(\{|name:)' 1.txt || true)
+          if [ "$NODE_COUNT" -lt 1 ]; then
+            echo "❌ 1.txt 中没有检测到有效节点，中止，保留旧文件"
+            exit 1
+          fi
+          echo "✅ 检测到 $NODE_COUNT 个节点条目"
+
+      - name: Safety check - 1.txt must differ from previous version
+        id: diff_check
+        run: |
+          if git diff --quiet -- 1.txt; then
+            echo "⚠️ 1.txt 内容未变化，跳过提交"
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "✅ 1.txt 有新内容"
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push 1.txt
+        if: steps.diff_check.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add 1.txt
+          git commit -m "Auto update 1.txt (filtered nodes)"
+          git push
