@@ -88,6 +88,7 @@ rules:
   # 3. IP 类规则兜底（域名规则未命中时，再按 IP 判断）
   - "GEOIP,telegram,PROXY,no-resolve"
   - "RULE-SET,Custom_Proxy_IP,PROXY,no-resolve"
+  - "GEOIP,twitter,PROXY,no-resolve"
 
   # 4. 最终兜底
-  - "MATCH,DIRECT"
+  - "MATCH,FALLBACK"
