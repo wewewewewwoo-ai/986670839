@@ -1,20 +1,101 @@
-proxy-providers: {}
+proxy-providers:
+  provider1:
+    type: http
+    url: https://sunmiao4458.github.io/free-proxy-airport/clash.yaml
+    interval: 3600
+    path: ./proxy_provider/provider1.yaml
+    proxy: DIRECT
+    filter: ^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|防范|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|中国|CN|China|上海|北京|广州|深圳|杭州|成都|武汉|西安|回国|中转|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    override:
+      udp: true
+  provider3:
+    type: http
+    url: https://sub.danhu.dpdns.org/paste/26HappyMAF-TG@FProxies/clash
+    interval: 3600
+    path: ./proxy_provider/provider3.yaml
+    proxy: DIRECT
+    filter: ^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|防范|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|中国|CN|China|上海|北京|广州|深圳|杭州|成都|武汉|西安|回国|中转|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    override:
+      udp: true
+proxy-groups:
+- name: PROXY
+  type: select
+  proxies:
+  - AUTO-FAST
+  - DIRECT
+- name: AUTO-FAST
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  use:
+  - provider1
+  - provider3
+- name: FALLBACK
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+rule-providers:
+  Custom_Proxy_Domain:
+    behavior: domain
+    interval: 86400
+    type: http
+    url: https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Proxy_Domain.mrs
+    format: mrs
+  Custom_Proxy_IP:
+    behavior: ipcidr
+    interval: 86400
+    type: http
+    url: https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Proxy_IP.mrs
+    format: mrs
+rules:
+- GEOSITE,private,DIRECT
+- GEOIP,private,DIRECT,no-resolve
+- GEOSITE,category-ai-!cn,PROXY
+- GEOSITE,gfw,PROXY
+- RULE-SET,Custom_Proxy_Domain,PROXY
+- GEOIP,telegram,PROXY,no-resolve
+- RULE-SET,Custom_Proxy_IP,PROXY,no-resolve
+- GEOIP,twitter,PROXY,no-resolve
+- MATCH,FALLBACK
 proxies:
-- client-fingerprint: chrome
+- client-fingerprint: ios
   flow: xtls-rprx-vision
-  name: "\U0001F1FA\U0001F1F8 US 001 | ⬇️ 150.02MB/s"
+  name: 🇺🇸 US 001 | ⬇️ 182.00MB/s
   port: 443
   reality-opts:
-    public-key: p8VhFzvFOBAhWAEAeWmwDxT3xBSRsGYixqi0qnLFnBM
-    short-id: 21270a66
-  server: tk1.high-speed-test-56424.me
-  servername: aws.amazon.com
+    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
+    short-id: c39cc7310a
+  server: 169.40.42.229
+  servername: yahoo.com
   skip-cert-verify: false
   tls: true
   type: vless
   udp: true
-  uuid: 37615d66-5467-44a3-bc23-f2c3bef7f761
-- name: "\U0001F1E8\U0001F1E6 CA 001 | ⬇️ 45.10MB/s"
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+- name: 🇨🇦 CA 001 | ⬇️ 108.87MB/s
+  network: ws
+  port: 8080
+  server: 104.18.35.86
+  servername: hhlfy.twiladaphne.ndjp.net
+  tls: false
+  type: vless
+  udp: true
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  ws-opts:
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+    path: /sg-melbi
+- name: 🇨🇦 CA 002 | ⬇️ 54.01MB/s
   network: ws
   port: 443
   server: 172.64.152.241
@@ -28,19 +109,6 @@ proxies:
     headers:
       Host: ccc.010304.xyz
     path: /fp
-- name: "\U0001F1E8\U0001F1E6 CA 002 | ⬇️ 42.40MB/s"
-  network: ws
-  port: 8080
-  server: 104.18.35.86
-  servername: hhlfy.twiladaphne.ndjp.net
-  tls: false
-  type: vless
-  udp: true
-  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
-  ws-opts:
-    headers:
-      Host: hhlfy.twiladaphne.ndjp.net
-    path: /sg-melbi
 - http-opts:
     headers:
       Host:
@@ -48,7 +116,7 @@ proxies:
     method: GET
     path:
     - /
-  name: "\U0001F1EE\U0001F1EA IE 001 | ⬇️ 27.13MB/s"
+  name: 🇮🇪 IE 001 | ⬇️ 49.88MB/s
   network: http
   port: 443
   server: 3.252.104.83
@@ -56,6 +124,27 @@ proxies:
   type: vless
   udp: true
   uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
+- cipher: aes-256-gcm
+  name: 🇮🇹 IT 001 | ⬇️ 37.62MB/s
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 202.50.253.99
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: 🇮🇹 IT 002 | ⬇️ 37.03MB/s
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 202.50.253.27
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: 🇮🇹 IT 003 | ⬇️ 36.77MB/s
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 202.50.253.81
+  type: ss
+  udp: true
 - http-opts:
     headers:
       Host:
@@ -63,7 +152,7 @@ proxies:
     method: GET
     path:
     - /
-  name: "\U0001F1F8\U0001F1EA SE 001 | ⬇️ 23.99MB/s"
+  name: 🇸🇪 SE 001 | ⬇️ 33.72MB/s
   network: http
   port: 443
   server: 51.21.247.148
@@ -71,30 +160,53 @@ proxies:
   type: vless
   udp: true
   uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
-- cipher: aes-256-gcm
-  name: "\U0001F1EE\U0001F1F9 IT 001 | ⬇️ 23.53MB/s"
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 202.50.253.99
-  type: ss
+- http-opts:
+    headers:
+      Host:
+      - play.googleapis.com
+    method: GET
+    path:
+    - /
+  name: 🇪🇸 ES 001 | ⬇️ 33.07MB/s
+  network: http
+  port: 443
+  server: 51.49.126.162
+  tls: false
+  type: vless
   udp: true
-- cipher: aes-256-gcm
-  name: "\U0001F1EE\U0001F1F9 IT 002 | ⬇️ 23.16MB/s"
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 202.50.253.27
-  type: ss
-  udp: true
-- cipher: aes-256-gcm
-  name: "\U0001F1EE\U0001F1F9 IT 003 | ⬇️ 23.10MB/s"
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 202.50.253.81
-  type: ss
-  udp: true
+  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
 - client-fingerprint: chrome
   flow: xtls-rprx-vision
-  name: "\U0001F1EF\U0001F1F5 JP 001 | ⬇️ 22.50MB/s"
+  name: 🇺🇸 US 002 | ⬇️ 31.82MB/s
+  port: 443
+  reality-opts:
+    public-key: p8VhFzvFOBAhWAEAeWmwDxT3xBSRsGYixqi0qnLFnBM
+    short-id: 21270a66
+  server: tk1.high-speed-test-56424.me
+  servername: aws.amazon.com
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 37615d66-5467-44a3-bc23-f2c3bef7f761
+- http-opts:
+    headers:
+      Host:
+      - play.googleapis.com
+    method: GET
+    path:
+    - /
+  name: 🇩🇪 DE 001 | ⬇️ 17.58MB/s
+  network: http
+  port: 443
+  server: 63.178.23.66
+  tls: false
+  type: vless
+  udp: true
+  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: 🇯🇵 JP 001 | ⬇️ 16.89MB/s
   port: 46105
   reality-opts:
     public-key: Lk5nwDxC2tr3J7hT8emhUUiMX8cHyKX9TiRj_EnAiik
@@ -107,10 +219,10 @@ proxies:
   udp: true
   uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
 - alpn:
-  - ""
+  - ''
   alterId: 0
   cipher: auto
-  name: "\U0001F1E8\U0001F1F3 TW 001 | ⬇️ 20.51MB/s"
+  name: 🇨🇳 TW 001 | ⬇️ 16.83MB/s
   network: ws
   port: 443
   server: 9641684.sdf65h4.top
@@ -124,24 +236,9 @@ proxies:
     headers:
       Host: 9641684.sdf65h4.top
     path: /
-- http-opts:
-    headers:
-      Host:
-      - play.googleapis.com
-    method: GET
-    path:
-    - /
-  name: "\U0001F1E9\U0001F1EA DE 001 | ⬇️ 19.94MB/s"
-  network: http
-  port: 443
-  server: 3.79.233.186
-  tls: false
-  type: vless
-  udp: true
-  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
 - client-fingerprint: chrome
   flow: xtls-rprx-vision
-  name: "\U0001F1F8\U0001F1EC SG 001 | ⬇️ 19.60MB/s"
+  name: 🇸🇬 SG 001 | ⬇️ 14.30MB/s
   port: 19825
   reality-opts:
     public-key: GvvkY8xYb9QjvwvzYq_uNC4tOGd0DCxRnz6770-xgkI
@@ -153,20 +250,6 @@ proxies:
   type: vless
   udp: true
   uuid: 2d1ad594-80a4-4bfb-87a6-038e39701f51
-- client-fingerprint: ios
-  flow: xtls-rprx-vision
-  name: "\U0001F1FA\U0001F1F8 US 002 | ⬇️ 19.03MB/s"
-  port: 443
-  reality-opts:
-    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
-    short-id: c39cc7310a
-  server: 169.40.42.229
-  servername: yahoo.com
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
 - http-opts:
     headers:
       Host:
@@ -174,46 +257,22 @@ proxies:
     method: GET
     path:
     - /
-  name: "\U0001F1EA\U0001F1F8 ES 001 | ⬇️ 16.22MB/s"
+  name: 🇩🇪 DE 002 | ⬇️ 11.25MB/s
   network: http
   port: 443
-  server: 51.49.126.162
+  server: 3.79.233.186
   tls: false
   type: vless
   udp: true
   uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
-- alpn:
-  - http/1.1
-  client-fingerprint: firefox
-  name: "\U0001F1F3\U0001F1F1 NL 001 | ⬇️ 15.76MB/s"
-  network: ws
-  port: 2096
-  server: 144.31.34.146
-  servername: fi1.merky.one
-  tls: true
-  type: vless
-  udp: true
-  uuid: 6e05822a-e9da-4135-a9db-71aa07a944af
-  ws-opts:
-    headers:
-      Host: fi1.merky.one
-    path: /mky-ws-4f19c8a7
-- http-opts:
-    headers:
-      Host:
-      - play.googleapis.com
-    method: GET
-    path:
-    - /
-  name: "\U0001F1E9\U0001F1EA DE 002 | ⬇️ 13.86MB/s"
-  network: http
+- cipher: aes-256-cfb
+  name: 🇺🇸 US 003 | ⬇️ 10.94MB/s
+  password: amazonskr05
   port: 443
-  server: 63.178.23.66
-  tls: false
-  type: vless
+  server: 3.15.220.122
+  type: ss
   udp: true
-  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
-- name: "\U0001F1FA\U0001F1F8 US 003 | ⬇️ 10.32MB/s"
+- name: 🇺🇸 US 004 | ⬇️ 9.82MB/s
   network: ws
   port: 80
   server: support.zoom.us
@@ -226,29 +285,20 @@ proxies:
     headers:
       Host: free.sahanwickramasinghe.me
     path: /
-- cipher: aes-256-cfb
-  name: "\U0001F1FA\U0001F1F8 US 004 | ⬇️ 9.77MB/s"
-  password: amazonskr05
-  port: 443
-  server: 3.15.220.122
-  type: ss
-  udp: true
 - client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: "\U0001F1ED\U0001F1F0 HK 001 | ⬇️ 9.30MB/s"
-  network: tcp
-  port: 9443
+  name: 🇨🇳 TW 002 | ⬇️ 6.56MB/s
+  port: 24215
   reality-opts:
-    public-key: 0hIFPaEn4RdFib8_eP8HYxMywR5izEwM3JA2W1Zo8U4
-    short-id: b390142456517acc
-  server: 45.207.157.8
-  servername: www.amazon.com
+    public-key: mdWKUPMVTtTbDqK10BPb89OcqBC2-Lx-4NOYtqc1GWE
+  server: hinet1.2yly.com
+  servername: addons.mozilla.org
+  skip-cert-verify: false
   tls: true
   type: vless
   udp: true
-  uuid: 82eb8419-59f4-4d3e-9106-d05d22af615c
+  uuid: 19d5a678-8396-4e3b-93da-ece618d0e83a
 - client-fingerprint: firefox
-  name: "\U0001F1F3\U0001F1F1 NL 002 | ⬇️ 5.55MB/s"
+  name: 🇳🇱 NL 001 | ⬇️ 6.50MB/s
   network: ws
   port: 443
   server: 177.3.208.65
@@ -260,14 +310,16 @@ proxies:
   ws-opts:
     path: /vless-tr
 - client-fingerprint: chrome
-  name: "\U0001F1E8\U0001F1F3 TW 002 | ⬇️ 3.66MB/s"
-  port: 24215
+  flow: xtls-rprx-vision
+  name: 🇭🇰 HK 001 | ⬇️ 1.27MB/s
+  network: tcp
+  port: 9443
   reality-opts:
-    public-key: mdWKUPMVTtTbDqK10BPb89OcqBC2-Lx-4NOYtqc1GWE
-  server: hinet1.2yly.com
-  servername: addons.mozilla.org
-  skip-cert-verify: false
+    public-key: 0hIFPaEn4RdFib8_eP8HYxMywR5izEwM3JA2W1Zo8U4
+    short-id: b390142456517acc
+  server: 45.207.157.8
+  servername: www.amazon.com
   tls: true
   type: vless
   udp: true
-  uuid: 19d5a678-8396-4e3b-93da-ece618d0e83a
+  uuid: 82eb8419-59f4-4d3e-9106-d05d22af615c
