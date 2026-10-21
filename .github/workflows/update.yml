@@ -23,36 +23,79 @@ jobs:
       - name: Install clash-speedtest
         run: go install github.com/faceair/clash-speedtest@latest
 
-      - name: Run speedtest and filter nodes
+      - name: 下载原始 v.txt 配置
+        run: |
+          curl -sSL "https://raw.githubusercontent.com/wewewewewwoo-ai/986670839/main/v.txt" -o v.txt
+
+      - name: 测速并输出纯节点文件
         run: |
           $(go env GOPATH)/bin/clash-speedtest \
-            -c "https://raw.githubusercontent.com/wewewewewwoo-ai/986670839/main/v.txt" \
-            -output 1.txt \
+            -c v.txt \
+            -output filtered_nodes.yaml \
             -max-latency 2000ms \
             -min-download-speed 0.5
 
-      - name: Safety check - file must exist and not be empty
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: 安装 PyYAML 依赖
+        run: pip install pyyaml
+
+      - name: 合并节点与规则 (生成最终的 1.txt)
+        run: |
+          cat << 'EOF' > merge.py
+          import yaml
+          import sys
+
+          try:
+              # 1. 读取测速后的节点
+              with open('filtered_nodes.yaml', 'r', encoding='utf-8') as f:
+                  filtered = yaml.safe_load(f)
+                  proxies = filtered.get('proxies', [])
+              
+              # 2. 读取原版 v.txt 以获取规则和策略组
+              with open('v.txt', 'r', encoding='utf-8') as f:
+                  original = yaml.safe_load(f)
+          except Exception as e:
+              print(f"❌ 读取文件失败: {e}")
+              sys.exit(1)
+
+          # 3. 替换节点
+          original['proxies'] = proxies
+
+          # 4. 兜底保护：如果原配置里没有策略组或规则，自动生成一个
+          if not original.get('proxy-groups'):
+              original['proxy-groups'] = [{
+                  'name': 'PROXY',
+                  'type': 'select',
+                  'proxies': ['DIRECT'] + [p['name'] for p in proxies]
+              }]
+          if not original.get('rules'):
+              original['rules'] = ['MATCH,PROXY']
+
+          # 5. 输出最终结果到 1.txt
+          with open('1.txt', 'w', encoding='utf-8') as f:
+              yaml.dump(original, f, allow_unicode=True, sort_keys=False)
+
+          print(f"✅ 成功合并！共保留 {len(proxies)} 个有效节点。")
+          EOF
+          python merge.py
+
+      - name: Safety check - 文件存在且非空
         run: |
           if [ ! -f 1.txt ]; then
-            echo "❌ 1.txt 不存在，工具可能运行失败，中止"
+            echo "❌ 1.txt 不存在，中止"
             exit 1
           fi
           if [ ! -s 1.txt ]; then
-            echo "❌ 1.txt 为空，中止，保留旧文件"
+            echo "❌ 1.txt 为空，中止"
             exit 1
           fi
           echo "✅ 1.txt 存在且非空"
 
-      - name: Safety check - must contain valid proxies
-        run: |
-          NODE_COUNT=$(grep -cE '^\s*-\s*(\{|name:)' 1.txt || true)
-          if [ "$NODE_COUNT" -lt 1 ]; then
-            echo "❌ 1.txt 中没有检测到有效节点，中止，保留旧文件"
-            exit 1
-          fi
-          echo "✅ 检测到 $NODE_COUNT 个节点条目"
-
-      - name: Safety check - 1.txt must differ from previous version
+      - name: Safety check - 内容是否有变化
         id: diff_check
         run: |
           if git diff --quiet -- 1.txt; then
@@ -63,11 +106,11 @@ jobs:
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
-      - name: Commit and push 1.txt
+      - name: 提交并覆盖 1.txt
         if: steps.diff_check.outputs.changed == 'true'
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add 1.txt
-          git commit -m "Auto update 1.txt (filtered nodes)"
+          git commit -m "Auto update 1.txt (merged with rules)"
           git push
