@@ -1,20 +1,20 @@
 proxy-providers: {}
 proxies:
-- client-fingerprint: ios
+- client-fingerprint: chrome
   flow: xtls-rprx-vision
-  name: "\U0001F1FA\U0001F1F8 US 001 | ⬇️ 203.88MB/s"
+  name: "\U0001F1FA\U0001F1F8 US 001 | ⬇️ 150.02MB/s"
   port: 443
   reality-opts:
-    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
-    short-id: c39cc7310a
-  server: 169.40.42.229
-  servername: yahoo.com
+    public-key: p8VhFzvFOBAhWAEAeWmwDxT3xBSRsGYixqi0qnLFnBM
+    short-id: 21270a66
+  server: tk1.high-speed-test-56424.me
+  servername: aws.amazon.com
   skip-cert-verify: false
   tls: true
   type: vless
   udp: true
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-- name: "\U0001F1E8\U0001F1E6 CA 001 | ⬇️ 99.73MB/s"
+  uuid: 37615d66-5467-44a3-bc23-f2c3bef7f761
+- name: "\U0001F1E8\U0001F1E6 CA 001 | ⬇️ 45.10MB/s"
   network: ws
   port: 443
   server: 172.64.152.241
@@ -28,7 +28,7 @@ proxies:
     headers:
       Host: ccc.010304.xyz
     path: /fp
-- name: "\U0001F1E8\U0001F1E6 CA 002 | ⬇️ 80.32MB/s"
+- name: "\U0001F1E8\U0001F1E6 CA 002 | ⬇️ 42.40MB/s"
   network: ws
   port: 8080
   server: 104.18.35.86
@@ -48,7 +48,7 @@ proxies:
     method: GET
     path:
     - /
-  name: "\U0001F1EE\U0001F1EA IE 001 | ⬇️ 48.55MB/s"
+  name: "\U0001F1EE\U0001F1EA IE 001 | ⬇️ 27.13MB/s"
   network: http
   port: 443
   server: 3.252.104.83
@@ -56,20 +56,6 @@ proxies:
   type: vless
   udp: true
   uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
-- cipher: aes-256-gcm
-  name: "\U0001F1EE\U0001F1F9 IT 001 | ⬇️ 36.95MB/s"
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 202.50.253.27
-  type: ss
-  udp: true
-- cipher: aes-256-gcm
-  name: "\U0001F1EE\U0001F1F9 IT 002 | ⬇️ 36.89MB/s"
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 202.50.253.99
-  type: ss
-  udp: true
 - http-opts:
     headers:
       Host:
@@ -77,7 +63,7 @@ proxies:
     method: GET
     path:
     - /
-  name: "\U0001F1F8\U0001F1EA SE 001 | ⬇️ 35.87MB/s"
+  name: "\U0001F1F8\U0001F1EA SE 001 | ⬇️ 23.99MB/s"
   network: http
   port: 443
   server: 51.21.247.148
@@ -85,49 +71,59 @@ proxies:
   type: vless
   udp: true
   uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: "\U0001F1FA\U0001F1F8 US 002 | ⬇️ 34.23MB/s"
-  port: 443
-  reality-opts:
-    public-key: p8VhFzvFOBAhWAEAeWmwDxT3xBSRsGYixqi0qnLFnBM
-    short-id: 21270a66
-  server: tk1.high-speed-test-56424.me
-  servername: aws.amazon.com
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 37615d66-5467-44a3-bc23-f2c3bef7f761
 - cipher: aes-256-gcm
-  name: "\U0001F1EE\U0001F1F9 IT 003 | ⬇️ 33.80MB/s"
+  name: "\U0001F1EE\U0001F1F9 IT 001 | ⬇️ 23.53MB/s"
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 202.50.253.99
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: "\U0001F1EE\U0001F1F9 IT 002 | ⬇️ 23.16MB/s"
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 202.50.253.27
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: "\U0001F1EE\U0001F1F9 IT 003 | ⬇️ 23.10MB/s"
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 202.50.253.81
   type: ss
   udp: true
-- http-opts:
-    headers:
-      Host:
-      - play.googleapis.com
-    method: GET
-    path:
-    - /
-  name: "\U0001F1EA\U0001F1F8 ES 001 | ⬇️ 31.32MB/s"
-  network: http
-  port: 443
-  server: 51.49.126.162
-  tls: false
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: "\U0001F1EF\U0001F1F5 JP 001 | ⬇️ 22.50MB/s"
+  port: 46105
+  reality-opts:
+    public-key: Lk5nwDxC2tr3J7hT8emhUUiMX8cHyKX9TiRj_EnAiik
+    short-id: 28f5c1f8f98a
+  server: funagfrdfs.alixxplay.com
+  servername: www.lamer.com.sg
+  skip-cert-verify: false
+  tls: true
   type: vless
   udp: true
-  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
-- cipher: aes-256-cfb
-  name: "\U0001F1FA\U0001F1F8 US 003 | ⬇️ 29.69MB/s"
-  password: amazonskr05
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+- alpn:
+  - ""
+  alterId: 0
+  cipher: auto
+  name: "\U0001F1E8\U0001F1F3 TW 001 | ⬇️ 20.51MB/s"
+  network: ws
   port: 443
-  server: 3.15.220.122
-  type: ss
+  server: 9641684.sdf65h4.top
+  servername: 9641684.sdf65h4.top
+  skip-cert-verify: true
+  tls: true
+  type: vmess
   udp: true
+  uuid: 250c015d-bab0-4ed3-b638-b4eda48f5840
+  ws-opts:
+    headers:
+      Host: 9641684.sdf65h4.top
+    path: /
 - http-opts:
     headers:
       Host:
@@ -135,22 +131,7 @@ proxies:
     method: GET
     path:
     - /
-  name: "\U0001F1E9\U0001F1EA DE 001 | ⬇️ 16.15MB/s"
-  network: http
-  port: 443
-  server: 63.178.23.66
-  tls: false
-  type: vless
-  udp: true
-  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
-- http-opts:
-    headers:
-      Host:
-      - play.googleapis.com
-    method: GET
-    path:
-    - /
-  name: "\U0001F1E9\U0001F1EA DE 002 | ⬇️ 9.83MB/s"
+  name: "\U0001F1E9\U0001F1EA DE 001 | ⬇️ 19.94MB/s"
   network: http
   port: 443
   server: 3.79.233.186
@@ -159,7 +140,127 @@ proxies:
   udp: true
   uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
 - client-fingerprint: chrome
-  name: "\U0001F1E8\U0001F1F3 TW 001 | ⬇️ 6.97MB/s"
+  flow: xtls-rprx-vision
+  name: "\U0001F1F8\U0001F1EC SG 001 | ⬇️ 19.60MB/s"
+  port: 19825
+  reality-opts:
+    public-key: GvvkY8xYb9QjvwvzYq_uNC4tOGd0DCxRnz6770-xgkI
+    short-id: 6ba85179e30d4fc2
+  server: sg2-8sb.6121999.dpdns.org
+  servername: sg2-8sb.6121999.dpdns.org
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 2d1ad594-80a4-4bfb-87a6-038e39701f51
+- client-fingerprint: ios
+  flow: xtls-rprx-vision
+  name: "\U0001F1FA\U0001F1F8 US 002 | ⬇️ 19.03MB/s"
+  port: 443
+  reality-opts:
+    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
+    short-id: c39cc7310a
+  server: 169.40.42.229
+  servername: yahoo.com
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+- http-opts:
+    headers:
+      Host:
+      - play.googleapis.com
+    method: GET
+    path:
+    - /
+  name: "\U0001F1EA\U0001F1F8 ES 001 | ⬇️ 16.22MB/s"
+  network: http
+  port: 443
+  server: 51.49.126.162
+  tls: false
+  type: vless
+  udp: true
+  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
+- alpn:
+  - http/1.1
+  client-fingerprint: firefox
+  name: "\U0001F1F3\U0001F1F1 NL 001 | ⬇️ 15.76MB/s"
+  network: ws
+  port: 2096
+  server: 144.31.34.146
+  servername: fi1.merky.one
+  tls: true
+  type: vless
+  udp: true
+  uuid: 6e05822a-e9da-4135-a9db-71aa07a944af
+  ws-opts:
+    headers:
+      Host: fi1.merky.one
+    path: /mky-ws-4f19c8a7
+- http-opts:
+    headers:
+      Host:
+      - play.googleapis.com
+    method: GET
+    path:
+    - /
+  name: "\U0001F1E9\U0001F1EA DE 002 | ⬇️ 13.86MB/s"
+  network: http
+  port: 443
+  server: 63.178.23.66
+  tls: false
+  type: vless
+  udp: true
+  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
+- name: "\U0001F1FA\U0001F1F8 US 003 | ⬇️ 10.32MB/s"
+  network: ws
+  port: 80
+  server: support.zoom.us
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  udp: true
+  uuid: fcdb24e3-5e66-4c45-b89e-ac9441f4dcda
+  ws-opts:
+    headers:
+      Host: free.sahanwickramasinghe.me
+    path: /
+- cipher: aes-256-cfb
+  name: "\U0001F1FA\U0001F1F8 US 004 | ⬇️ 9.77MB/s"
+  password: amazonskr05
+  port: 443
+  server: 3.15.220.122
+  type: ss
+  udp: true
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: "\U0001F1ED\U0001F1F0 HK 001 | ⬇️ 9.30MB/s"
+  network: tcp
+  port: 9443
+  reality-opts:
+    public-key: 0hIFPaEn4RdFib8_eP8HYxMywR5izEwM3JA2W1Zo8U4
+    short-id: b390142456517acc
+  server: 45.207.157.8
+  servername: www.amazon.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 82eb8419-59f4-4d3e-9106-d05d22af615c
+- client-fingerprint: firefox
+  name: "\U0001F1F3\U0001F1F1 NL 002 | ⬇️ 5.55MB/s"
+  network: ws
+  port: 443
+  server: 177.3.208.65
+  servername: tgmansion.site
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4f34bc04-479c-49ba-91a8-6bb9ed15031c
+  ws-opts:
+    path: /vless-tr
+- client-fingerprint: chrome
+  name: "\U0001F1E8\U0001F1F3 TW 002 | ⬇️ 3.66MB/s"
   port: 24215
   reality-opts:
     public-key: mdWKUPMVTtTbDqK10BPb89OcqBC2-Lx-4NOYtqc1GWE
