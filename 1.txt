@@ -390,25 +390,25 @@ rule-providers:
 # ==================== 分流规则 Rules ====================
 
 rules:
-  # ===== 1. 私有网络 / 基础直连 =====
+  # 1. 基础局域网 / 本地直连（最先匹配，保证内网速度）
   - "GEOSITE,private,DIRECT"
   - "GEOIP,private,DIRECT,no-resolve"
 
-  # ===== 2. 强制走代理的服务（建议前置，防止被国内规则误伤）=====
+  # 2. 必须代理的服务（前置：防止 AI 或 GFW 域名被下面的 cn 规则误伤）
   - "GEOSITE,category-ai-!cn,PROXY"
   - "GEOSITE,gfw,PROXY"
   - "RULE-SET,Custom_Proxy_Domain,PROXY"
   - "RULE-SET,Custom_Proxy_IP,PROXY,no-resolve"
 
-  # ===== 3. 自定义直连 / CDN / 国内直连 =====
+  # 3. 你的自定义直连 / Steam CDN / 基础直连
   - "RULE-SET,Custom_Direct_Domain,DIRECT"
   - "RULE-SET,Custom_Direct_IP,DIRECT,no-resolve"
   - "RULE-SET,Steam_CDN_Domain,DIRECT"
   - "RULE-SET,Steam_CDN_IP,DIRECT,no-resolve"
   - "GEOSITE,category-ai-cn,DIRECT"
-  - "GEOSITE,microsoft,DIRECT"
+  # 4. 国内流量直连
   - "GEOSITE,cn,DIRECT"
   - "GEOIP,cn,DIRECT,no-resolve"
 
-  # ===== 4. 漏网之鱼 =====
+  # 5. 所有其他流量（包括 Telegram、YouTube、未匹配的国外网站等）全部交给 Smart 自动选择
   - "MATCH,PROXY"
