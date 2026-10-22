@@ -55,8 +55,8 @@ proxy-groups:
   - name: "FALLBACK"
     type: select
     proxies:
-      - "PROXY"
       - "DIRECT"
+      - "PROXY"
 
 # ==================== 规则提供者 Rule Providers ====================
 rule-providers:
