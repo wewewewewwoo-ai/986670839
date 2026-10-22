@@ -7,129 +7,178 @@ unified-delay: true
 tcp-concurrent: true
 global-client-fingerprint: chrome
 proxies:
-- latency: 1355
-  name: '>🇷🇴RO|Hs|1004|TG@FProxies| 3'
-  port: 9002
-  server: 193.176.84.40
-  skip-cert-verify: true
-  speed: 330.6
-  tls: true
-  type: http
-  udp: true
-- latency: 1195
-  name: '>🇺🇸US|Ms|1004|TG@FProxies| 2'
-  port: 443
-  server: 137.175.22.120
-  skip-cert-verify: true
-  speed: 306.4
-  tls: true
-  type: http
-  udp: true
-- latency: 1303
-  name: '>🇫🇷FR|Ms|1004|TG@FProxies|'
-  port: 443
-  server: 62.210.27.111
-  skip-cert-verify: true
-  speed: 298.6
-  tls: true
-  type: http
-  udp: true
-- latency: 1216
-  name: '>🇭🇰HK|Ns|1004|TG@FProxies| 7'
-  port: 39811
-  server: 176.111.37.5
-  skip-cert-verify: true
-  speed: 283.8
-  tls: false
-  type: http
-  udp: true
-- latency: 347
-  name: '>🇭🇰HK|Hs|1004|TG@FProxies| 2'
-  port: 7890
-  server: 83.229.127.126
-  skip-cert-verify: true
-  speed: 281.7
-  tls: false
-  type: http
-  udp: true
-- latency: 1032
-  name: '>🇷🇴RO|Ms|1004|TG@FProxies|'
-  password: None
-  port: 9002
-  server: 193.176.84.19
-  skip-cert-verify: true
-  speed: 279.5
-  tls: true
-  type: http
-  udp: true
-- latency: 1538
-  name: '>🇫🇷FR|Ms|1004|TG@FProxies| 2'
-  password: None
-  port: 443
-  server: fan.132031.xyz
-  skip-cert-verify: true
-  speed: 253.2
-  tls: true
-  type: http
-  udp: true
-- latency: 1083
-  name: '>🇺🇸US|Ls|1004|TG@FProxies| 4'
-  port: 443
-  server: goedkoopgeluid.icu
-  skip-cert-verify: true
-  speed: 253.0
-  tls: true
-  type: http
-  udp: true
-  username: bnVsbDpudWxs
-- latency: 1574
-  name: '>🇷🇴RO|Hs|1004|TG@FProxies| 6'
-  password: None
-  port: 9002
-  server: 193.176.84.16
-  skip-cert-verify: true
-  speed: 249.0
-  tls: true
-  type: http
-  udp: true
-- latency: 1481
-  name: '>🇳🇱NL|Ms|1004|TG@FProxies| 5'
-  password: None
-  port: 443
-  server: 5.255.118.82
-  skip-cert-verify: true
-  speed: 248.0
-  tls: true
-  type: http
-  udp: true
-  username: None
-- latency: 840
-  name: '>🇭🇰HK|Ls|1004|TG@FProxies| 5'
-  password: 123
-  port: 3060
-  server: 8.217.208.190
-  skip-cert-verify: true
-  speed: 237.3
-  type: socks5
-  udp: true
-  username: 123
-- latency: 1395
-  name: '>🇳🇱NL|Hs|1004|TG@FProxies|'
-  password: 'null'
-  port: 443
-  server: 103.97.88.154
-  skip-cert-verify: true
-  speed: 216.0
-  tls: true
-  type: http
-  udp: true
-  username: 'null'
-- latency: 1859
-  name: '>🇺🇸US|Ms|1004|TG@FProxies| 6'
+- name: US_speednode_0029
   port: 9443
-  server: 162.191.226.246
+  server: 213.139.9.142
   skip-cert-verify: true
-  speed: 207.4
+  tls: true
+  type: http
+  udp: true
+- name: 🇺🇸US_3|1.5MB/s
+  port: 9002
+  server: 138.199.35.215
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: RS_speednode_0025
+  password: None
+  port: 443
+  server: 146.70.221.34
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: RO_speednode_0024
+  port: 443
+  server: 185.163.110.194
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: 🇨🇭CH_1|1.1MB/s
+  password: None
+  port: 9443
+  server: 37.120.213.210
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: AT_speednode_0001
+  port: 443
+  server: 146.70.244.2
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: RS_speednode_0026
+  port: 443
+  server: 146.70.221.18
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: US_speednode_0030
+  port: 9002
+  server: 138.199.35.214
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: 🇸🇪SE_1|1.9MB/s
+  password: None
+  port: 443
+  server: 146.70.242.146
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: 🇨🇿CZ_1|1.9MB/s
+  port: 443
+  server: 185.216.35.66
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: RO_speednode_0023
+  port: 9002
+  server: 193.176.84.20
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: 🇭🇺HU_1|1.5MB/s
+  password: None
+  port: 443
+  server: 146.70.203.18
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: 🇪🇪EE_1|1.4MB/s
+  port: 9443
+  server: 95.153.31.66
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: 🇵🇱PL_1|1.8MB/s
+  password: None
+  port: 443
+  server: 37.120.156.18
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: 🇱🇺LU_1|1.0MB/s
+  password: None
+  port: 9443
+  server: 185.221.132.226
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: 🇪🇪EE_2|3.2MB/s|K001-260618
+  port: 9443
+  server: 95.153.32.2
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: GB_speednode_0010
+  port: 443
+  server: 212.102.63.61
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: DE_speednode_0004
+  port: 443
+  server: 149.36.50.157
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: DE_speednode_0003
+  port: 443
+  server: 149.36.50.1
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: NL_speednode_0014
+  port: 9443
+  server: 149.36.51.157
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: 🇸🇪SE_2|1.6MB/s
+  password: None
+  port: 443
+  server: 146.70.242.130
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: 🇵🇹PT_1|1.1MB/s
+  port: 443
+  server: 149.22.86.14
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: NL_speednode_0017
+  port: 9002
+  server: 84.17.47.150
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: NL_speednode_0019
+  port: 9002
+  server: 84.17.47.125
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: GB_speednode_0009
+  password: None
+  port: 443
+  server: 212.102.63.61
+  skip-cert-verify: true
   tls: true
   type: http
   udp: true
@@ -145,19 +194,31 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - '>🇷🇴RO|Hs|1004|TG@FProxies| 3'
-  - '>🇺🇸US|Ms|1004|TG@FProxies| 2'
-  - '>🇫🇷FR|Ms|1004|TG@FProxies|'
-  - '>🇭🇰HK|Ns|1004|TG@FProxies| 7'
-  - '>🇭🇰HK|Hs|1004|TG@FProxies| 2'
-  - '>🇷🇴RO|Ms|1004|TG@FProxies|'
-  - '>🇫🇷FR|Ms|1004|TG@FProxies| 2'
-  - '>🇺🇸US|Ls|1004|TG@FProxies| 4'
-  - '>🇷🇴RO|Hs|1004|TG@FProxies| 6'
-  - '>🇳🇱NL|Ms|1004|TG@FProxies| 5'
-  - '>🇭🇰HK|Ls|1004|TG@FProxies| 5'
-  - '>🇳🇱NL|Hs|1004|TG@FProxies|'
-  - '>🇺🇸US|Ms|1004|TG@FProxies| 6'
+  - US_speednode_0029
+  - 🇺🇸US_3|1.5MB/s
+  - RS_speednode_0025
+  - RO_speednode_0024
+  - 🇨🇭CH_1|1.1MB/s
+  - AT_speednode_0001
+  - RS_speednode_0026
+  - US_speednode_0030
+  - 🇸🇪SE_1|1.9MB/s
+  - 🇨🇿CZ_1|1.9MB/s
+  - RO_speednode_0023
+  - 🇭🇺HU_1|1.5MB/s
+  - 🇪🇪EE_1|1.4MB/s
+  - 🇵🇱PL_1|1.8MB/s
+  - 🇱🇺LU_1|1.0MB/s
+  - 🇪🇪EE_2|3.2MB/s|K001-260618
+  - GB_speednode_0010
+  - DE_speednode_0004
+  - DE_speednode_0003
+  - NL_speednode_0014
+  - 🇸🇪SE_2|1.6MB/s
+  - 🇵🇹PT_1|1.1MB/s
+  - NL_speednode_0017
+  - NL_speednode_0019
+  - GB_speednode_0009
 - name: FALLBACK
   type: select
   proxies:
