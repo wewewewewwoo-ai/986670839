@@ -35,7 +35,7 @@ jobs:
             -c v.txt \
             -output output_data.yaml \
             -max-latency 2000ms \
-            -min-download-speed 0.5
+            -min-download-speed 0.05
 
       - name: Setup Python
         uses: actions/setup-python@v5
