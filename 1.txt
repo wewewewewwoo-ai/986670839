@@ -7,90 +7,92 @@ unified-delay: true
 tcp-concurrent: true
 global-client-fingerprint: chrome
 proxies:
-- name: US_speednode_0039
-  port: 9002
-  server: 138.199.35.215
+- name: '[freeSub#332] D🔴🇻🇳hos_dokng.com_357b2dc9'
+  port: 1083
+  server: 113.22.224.63
+  skip-cert-verify: true
+  type: socks5
+- name: '[freeSub#309] D🔴🇩🇪hos[🎬🤖📺🎭]_dokng.com_5e5ade52'
+  password: null
+  port: 443
+  server: 87.106.223.158
   skip-cert-verify: true
   tls: true
   type: http
-  udp: true
-- name: '[freeSub#369] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_f41808b3'
+- name: '[freeSub#325] D🔴🇸🇪hos[🎬🤖📺🎭]_dokng.com_1ba3cfe0'
+  password: null
+  port: 443
+  server: 146.70.242.130
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[freeSub#413] C🟠🇵🇹hos[🤖📺🎭✨]_dokng.com_2226fec1'
+  port: 443
+  server: 149.22.86.14
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[freeSub#293] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_249361ae'
   password: ''
   port: 9002
-  server: 138.199.35.203
+  server: 138.199.35.219
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[freeSub#188] D🔴🇫🇷hos[🎬🤖📺🎭]_dokng.com_67435526'
-  port: 443
-  server: 141.94.16.4
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[ermaozi#026] 🇩🇰DK_1|2.5MB/s'
-  password: None
-  port: 9443
-  server: 185.245.84.50
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[freeSub#259] U⚪🏳️ukn[🎬🤖📺🎭]_dokng.com_549727c0'
-  password: freeuser1
-  port: 9251
-  server: nl206.freeconnect.link
-  skip-cert-verify: true
-  sni: nl206.freeconnect.link
-  tls: true
-  type: http
-- name: FR_speednode_0010
-  port: 443
-  server: 51.210.167.149
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: RO_speednode_0036
-  port: 9002
-  server: 193.176.84.19
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: LV_speednode_0027
-  port: 443
-  server: 185.219.159.15
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: DK_speednode_0005
-  port: 9002
-  server: 158.173.154.2
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: NL_speednode_0029
+- name: '[freeSub#313] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_e487e5ba'
   password: None
   port: 9002
-  server: 84.17.47.123
+  server: 138.199.35.205
   skip-cert-verify: true
   tls: true
   type: http
-  udp: true
-- name: RO_speednode_0032
+- name: '[freeSub#209] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_5c51c586'
+  password: ''
   port: 9002
-  server: 193.176.84.24
+  server: 138.199.35.208
   skip-cert-verify: true
   tls: true
   type: http
-  udp: true
-- name: '[freeSub#279] D🔴🇷🇴hos[🎬🤖📺🎭]_dokng.com_31230420'
+- name: '[freeSub#180] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_cb7feb0f'
+  port: 443
+  server: 149.22.88.65
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[freeSub#323] D🔴🇫🇷hos[🎬🤖📺🎭]_dokng.com_e73d582a'
+  password: None
+  port: 443
+  server: 149.102.245.65
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[freeSub#176] D🔴🇫🇷hos[🎬🤖📺🎭]_dokng.com_a021a4e0'
   password: null
-  port: 9002
-  server: 193.176.84.31
+  port: 443
+  server: 82.66.235.221
   skip-cert-verify: true
   tls: true
+  type: http
+- name: '[freeSub#311] C🟠🇬🇷hos[🎬🤖📺🎭]_dokng.com_7f9fa854'
+  password: ''
+  port: 443
+  server: 149.22.85.65
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[freeSub#312] D🔴🇷🇴hos[🎬🤖📺🎭]_dokng.com_30ef0ff2'
+  port: 9002
+  server: 193.176.84.17
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[freeSub#005] C🟠🇸🇬hos[📺]_dokng.com_8853a869'
+  password: '1234'
+  port: 2080
+  server: 13.214.213.66
+  skip-cert-verify: true
   type: http
 proxy-groups:
 - name: PROXY
@@ -104,18 +106,19 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - US_speednode_0039
-  - '[freeSub#369] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_f41808b3'
-  - '[freeSub#188] D🔴🇫🇷hos[🎬🤖📺🎭]_dokng.com_67435526'
-  - '[ermaozi#026] 🇩🇰DK_1|2.5MB/s'
-  - '[freeSub#259] U⚪🏳️ukn[🎬🤖📺🎭]_dokng.com_549727c0'
-  - FR_speednode_0010
-  - RO_speednode_0036
-  - LV_speednode_0027
-  - DK_speednode_0005
-  - NL_speednode_0029
-  - RO_speednode_0032
-  - '[freeSub#279] D🔴🇷🇴hos[🎬🤖📺🎭]_dokng.com_31230420'
+  - '[freeSub#332] D🔴🇻🇳hos_dokng.com_357b2dc9'
+  - '[freeSub#309] D🔴🇩🇪hos[🎬🤖📺🎭]_dokng.com_5e5ade52'
+  - '[freeSub#325] D🔴🇸🇪hos[🎬🤖📺🎭]_dokng.com_1ba3cfe0'
+  - '[freeSub#413] C🟠🇵🇹hos[🤖📺🎭✨]_dokng.com_2226fec1'
+  - '[freeSub#293] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_249361ae'
+  - '[freeSub#313] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_e487e5ba'
+  - '[freeSub#209] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_5c51c586'
+  - '[freeSub#180] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_cb7feb0f'
+  - '[freeSub#323] D🔴🇫🇷hos[🎬🤖📺🎭]_dokng.com_e73d582a'
+  - '[freeSub#176] D🔴🇫🇷hos[🎬🤖📺🎭]_dokng.com_a021a4e0'
+  - '[freeSub#311] C🟠🇬🇷hos[🎬🤖📺🎭]_dokng.com_7f9fa854'
+  - '[freeSub#312] D🔴🇷🇴hos[🎬🤖📺🎭]_dokng.com_30ef0ff2'
+  - '[freeSub#005] C🟠🇸🇬hos[📺]_dokng.com_8853a869'
 - name: FALLBACK
   type: select
   proxies:
