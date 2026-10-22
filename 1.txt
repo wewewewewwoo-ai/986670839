@@ -7,52 +7,15 @@ unified-delay: true
 tcp-concurrent: true
 global-client-fingerprint: chrome
 proxies:
-- name: US_speednode_0029
-  port: 9443
-  server: 213.139.9.142
+- name: 🇸🇬SG_5|4.3MB/s
+  password: '1234'
+  port: 2080
+  server: 18.143.163.241
   skip-cert-verify: true
-  tls: true
   type: http
-  udp: true
-- name: 🇺🇸US_3|1.5MB/s
-  port: 9002
-  server: 138.199.35.215
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: RS_speednode_0025
-  password: None
-  port: 443
-  server: 146.70.221.34
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: RO_speednode_0024
-  port: 443
-  server: 185.163.110.194
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: 🇨🇭CH_1|1.1MB/s
-  password: None
-  port: 9443
-  server: 37.120.213.210
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: AT_speednode_0001
-  port: 443
-  server: 146.70.244.2
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: RS_speednode_0026
-  port: 443
-  server: 146.70.221.18
+- name: US_speednode_0045
+  port: 8443
+  server: 44.248.167.117
   skip-cert-verify: true
   tls: true
   type: http
@@ -64,124 +27,93 @@ proxies:
   tls: true
   type: http
   udp: true
-- name: 🇸🇪SE_1|1.9MB/s
-  password: None
+- name: 🇫🇷FR_3|3.2MB/s
   port: 443
-  server: 146.70.242.146
+  server: 141.94.16.4
   skip-cert-verify: true
   tls: true
   type: http
-- name: 🇨🇿CZ_1|1.9MB/s
-  port: 443
-  server: 185.216.35.66
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: RO_speednode_0023
+- name: 🇷🇴RO_3|2.7MB/s
+  password: 'null'
   port: 9002
-  server: 193.176.84.20
+  server: 193.176.84.21
   skip-cert-verify: true
   tls: true
   type: http
-  udp: true
-- name: 🇭🇺HU_1|1.5MB/s
-  password: None
-  port: 443
-  server: 146.70.203.18
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: 🇪🇪EE_1|1.4MB/s
-  port: 9443
-  server: 95.153.31.66
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: 🇵🇱PL_1|1.8MB/s
-  password: None
-  port: 443
-  server: 37.120.156.18
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: 🇱🇺LU_1|1.0MB/s
-  password: None
-  port: 9443
-  server: 185.221.132.226
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: 🇪🇪EE_2|3.2MB/s|K001-260618
-  port: 9443
-  server: 95.153.32.2
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: GB_speednode_0010
-  port: 443
-  server: 212.102.63.61
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: DE_speednode_0004
-  port: 443
-  server: 149.36.50.157
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: DE_speednode_0003
-  port: 443
-  server: 149.36.50.1
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: NL_speednode_0014
-  port: 9443
-  server: 149.36.51.157
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: 🇸🇪SE_2|1.6MB/s
-  password: None
-  port: 443
-  server: 146.70.242.130
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: 🇵🇹PT_1|1.1MB/s
-  port: 443
-  server: 149.22.86.14
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: NL_speednode_0017
+- name: US_speednode_0039
   port: 9002
-  server: 84.17.47.150
+  server: 138.199.35.215
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
-- name: NL_speednode_0019
-  port: 9002
-  server: 84.17.47.125
+- name: CA_speednode_0001
+  port: 443
+  server: 35.183.131.26
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
-- name: GB_speednode_0009
+- name: JP_speednode_0011
+  port: 343
+  server: 133.18.200.207
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: FR_speednode_0010
+  port: 443
+  server: 51.210.167.149
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: 🇨🇦CA_3|3.0MB/s
   password: None
   port: 443
-  server: 212.102.63.61
+  server: 35.183.131.26
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: 🇳🇱NL_12|2.2MB/s
+  port: 10808
+  server: 77.221.148.116
+  skip-cert-verify: true
+  type: socks5
+- name: DK_speednode_0007
+  port: 9002
+  server: 158.173.154.1
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
+- name: RO_speednode_0032
+  port: 9002
+  server: 193.176.84.24
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: NL_speednode_0022
+  port: 9002
+  server: 84.17.47.149
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: NL_speednode_0028
+  port: 9002
+  server: 84.17.47.124
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: 🇮🇳IN_1|1.7MB/s
+  port: 52200
+  server: 120.232.204.58
+  skip-cert-verify: true
+  tls: true
+  type: http
 proxy-groups:
 - name: PROXY
   type: select
@@ -194,31 +126,22 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - US_speednode_0029
-  - 🇺🇸US_3|1.5MB/s
-  - RS_speednode_0025
-  - RO_speednode_0024
-  - 🇨🇭CH_1|1.1MB/s
-  - AT_speednode_0001
-  - RS_speednode_0026
+  - 🇸🇬SG_5|4.3MB/s
+  - US_speednode_0045
   - US_speednode_0030
-  - 🇸🇪SE_1|1.9MB/s
-  - 🇨🇿CZ_1|1.9MB/s
-  - RO_speednode_0023
-  - 🇭🇺HU_1|1.5MB/s
-  - 🇪🇪EE_1|1.4MB/s
-  - 🇵🇱PL_1|1.8MB/s
-  - 🇱🇺LU_1|1.0MB/s
-  - 🇪🇪EE_2|3.2MB/s|K001-260618
-  - GB_speednode_0010
-  - DE_speednode_0004
-  - DE_speednode_0003
-  - NL_speednode_0014
-  - 🇸🇪SE_2|1.6MB/s
-  - 🇵🇹PT_1|1.1MB/s
-  - NL_speednode_0017
-  - NL_speednode_0019
-  - GB_speednode_0009
+  - 🇫🇷FR_3|3.2MB/s
+  - 🇷🇴RO_3|2.7MB/s
+  - US_speednode_0039
+  - CA_speednode_0001
+  - JP_speednode_0011
+  - FR_speednode_0010
+  - 🇨🇦CA_3|3.0MB/s
+  - 🇳🇱NL_12|2.2MB/s
+  - DK_speednode_0007
+  - RO_speednode_0032
+  - NL_speednode_0022
+  - NL_speednode_0028
+  - 🇮🇳IN_1|1.7MB/s
 - name: FALLBACK
   type: select
   proxies:
