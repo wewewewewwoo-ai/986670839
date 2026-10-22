@@ -6,7 +6,133 @@ ipv6: true
 unified-delay: true
 tcp-concurrent: true
 global-client-fingerprint: chrome
-proxies: []
+proxies:
+- latency: 1355
+  name: '>🇷🇴RO|Hs|1004|TG@FProxies| 3'
+  port: 9002
+  server: 193.176.84.40
+  skip-cert-verify: true
+  speed: 330.6
+  tls: true
+  type: http
+  udp: true
+- latency: 1195
+  name: '>🇺🇸US|Ms|1004|TG@FProxies| 2'
+  port: 443
+  server: 137.175.22.120
+  skip-cert-verify: true
+  speed: 306.4
+  tls: true
+  type: http
+  udp: true
+- latency: 1303
+  name: '>🇫🇷FR|Ms|1004|TG@FProxies|'
+  port: 443
+  server: 62.210.27.111
+  skip-cert-verify: true
+  speed: 298.6
+  tls: true
+  type: http
+  udp: true
+- latency: 1216
+  name: '>🇭🇰HK|Ns|1004|TG@FProxies| 7'
+  port: 39811
+  server: 176.111.37.5
+  skip-cert-verify: true
+  speed: 283.8
+  tls: false
+  type: http
+  udp: true
+- latency: 347
+  name: '>🇭🇰HK|Hs|1004|TG@FProxies| 2'
+  port: 7890
+  server: 83.229.127.126
+  skip-cert-verify: true
+  speed: 281.7
+  tls: false
+  type: http
+  udp: true
+- latency: 1032
+  name: '>🇷🇴RO|Ms|1004|TG@FProxies|'
+  password: None
+  port: 9002
+  server: 193.176.84.19
+  skip-cert-verify: true
+  speed: 279.5
+  tls: true
+  type: http
+  udp: true
+- latency: 1538
+  name: '>🇫🇷FR|Ms|1004|TG@FProxies| 2'
+  password: None
+  port: 443
+  server: fan.132031.xyz
+  skip-cert-verify: true
+  speed: 253.2
+  tls: true
+  type: http
+  udp: true
+- latency: 1083
+  name: '>🇺🇸US|Ls|1004|TG@FProxies| 4'
+  port: 443
+  server: goedkoopgeluid.icu
+  skip-cert-verify: true
+  speed: 253.0
+  tls: true
+  type: http
+  udp: true
+  username: bnVsbDpudWxs
+- latency: 1574
+  name: '>🇷🇴RO|Hs|1004|TG@FProxies| 6'
+  password: None
+  port: 9002
+  server: 193.176.84.16
+  skip-cert-verify: true
+  speed: 249.0
+  tls: true
+  type: http
+  udp: true
+- latency: 1481
+  name: '>🇳🇱NL|Ms|1004|TG@FProxies| 5'
+  password: None
+  port: 443
+  server: 5.255.118.82
+  skip-cert-verify: true
+  speed: 248.0
+  tls: true
+  type: http
+  udp: true
+  username: None
+- latency: 840
+  name: '>🇭🇰HK|Ls|1004|TG@FProxies| 5'
+  password: 123
+  port: 3060
+  server: 8.217.208.190
+  skip-cert-verify: true
+  speed: 237.3
+  type: socks5
+  udp: true
+  username: 123
+- latency: 1395
+  name: '>🇳🇱NL|Hs|1004|TG@FProxies|'
+  password: 'null'
+  port: 443
+  server: 103.97.88.154
+  skip-cert-verify: true
+  speed: 216.0
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
+- latency: 1859
+  name: '>🇺🇸US|Ms|1004|TG@FProxies| 6'
+  port: 9443
+  server: 162.191.226.246
+  skip-cert-verify: true
+  speed: 207.4
+  tls: true
+  type: http
+  udp: true
 proxy-groups:
 - name: PROXY
   type: select
@@ -18,7 +144,20 @@ proxy-groups:
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
-  proxies: []
+  proxies:
+  - '>🇷🇴RO|Hs|1004|TG@FProxies| 3'
+  - '>🇺🇸US|Ms|1004|TG@FProxies| 2'
+  - '>🇫🇷FR|Ms|1004|TG@FProxies|'
+  - '>🇭🇰HK|Ns|1004|TG@FProxies| 7'
+  - '>🇭🇰HK|Hs|1004|TG@FProxies| 2'
+  - '>🇷🇴RO|Ms|1004|TG@FProxies|'
+  - '>🇫🇷FR|Ms|1004|TG@FProxies| 2'
+  - '>🇺🇸US|Ls|1004|TG@FProxies| 4'
+  - '>🇷🇴RO|Hs|1004|TG@FProxies| 6'
+  - '>🇳🇱NL|Ms|1004|TG@FProxies| 5'
+  - '>🇭🇰HK|Ls|1004|TG@FProxies| 5'
+  - '>🇳🇱NL|Hs|1004|TG@FProxies|'
+  - '>🇺🇸US|Ms|1004|TG@FProxies| 6'
 - name: FALLBACK
   type: select
   proxies:
