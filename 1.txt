@@ -10,33 +10,31 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - "🇺🇸 US 001 | ⬇️ 182.00MB/s"
-  - "🇨🇦 CA 001 | ⬇️ 108.87MB/s"
-  - "🇨🇦 CA 002 | ⬇️ 54.01MB/s"
-  - "🇮🇪 IE 001 | ⬇️ 49.88MB/s"
-  - "🇮🇹 IT 001 | ⬇️ 37.62MB/s"
-  - "🇮🇹 IT 002 | ⬇️ 37.03MB/s"
-  - "🇮🇹 IT 003 | ⬇️ 36.77MB/s"
-  - "🇸🇪 SE 001 | ⬇️ 33.72MB/s"
-  - "🇪🇸 ES 001 | ⬇️ 33.07MB/s"
-  - "🇺🇸 US 002 | ⬇️ 31.82MB/s"
-  - "🇩🇪 DE 001 | ⬇️ 17.58MB/s"
-  - "🇯🇵 JP 001 | ⬇️ 16.89MB/s"
-  - "🇨🇳 TW 001 | ⬇️ 16.83MB/s"
-  - "🇸🇬 SG 001 | ⬇️ 14.30MB/s"
-  - "🇩🇪 DE 002 | ⬇️ 11.25MB/s"
-  - "🇺🇸 US 003 | ⬇️ 10.94MB/s"
-  - "🇺🇸 US 004 | ⬇️ 9.82MB/s"
-  - "🇨🇳 TW 002 | ⬇️ 6.56MB/s"
-  - "🇳🇱 NL 001 | ⬇️ 6.50MB/s"
-  - "🇭🇰 HK 001 | ⬇️ 1.27MB/s"
-  - DIRECT
+  - 🇺🇸 US 001 | ⬇️ 127.41MB/s
+  - 🇨🇦 CA 001 | ⬇️ 46.57MB/s
+  - 🇺🇸 US 002 | ⬇️ 41.11MB/s
+  - 🇨🇦 CA 002 | ⬇️ 39.11MB/s
+  - 🇮🇪 IE 001 | ⬇️ 27.79MB/s
+  - 🇮🇹 IT 001 | ⬇️ 24.18MB/s
+  - 🇮🇹 IT 002 | ⬇️ 23.88MB/s
+  - 🇪🇸 ES 001 | ⬇️ 23.46MB/s
+  - 🇮🇹 IT 003 | ⬇️ 23.28MB/s
+  - 🇸🇪 SE 001 | ⬇️ 22.53MB/s
+  - 🇨🇳 TW 001 | ⬇️ 22.19MB/s
+  - 🇩🇪 DE 001 | ⬇️ 21.32MB/s
+  - 🇩🇪 DE 002 | ⬇️ 20.65MB/s
+  - 🇸🇬 SG 001 | ⬇️ 19.93MB/s
+  - 🇳🇱 NL 001 | ⬇️ 18.40MB/s
+  - 🇺🇸 US 003 | ⬇️ 11.81MB/s
+  - 🇨🇳 TW 002 | ⬇️ 10.12MB/s
+  - 🇳🇱 NL 002 | ⬇️ 4.84MB/s
+  - 🇭🇰 HK 001 | ⬇️ 0.27MB/s
+  - 🇨🇦 CA 003 | ⬇️ 0.25MB/s
 - name: FALLBACK
   type: select
   proxies:
   - PROXY
   - DIRECT
-
 rule-providers:
   Custom_Proxy_Domain:
     behavior: domain
@@ -50,7 +48,6 @@ rule-providers:
     type: http
     url: https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Proxy_IP.mrs
     format: mrs
-
 rules:
 - GEOSITE,private,DIRECT
 - GEOIP,private,DIRECT,no-resolve
@@ -61,36 +58,22 @@ rules:
 - RULE-SET,Custom_Proxy_IP,PROXY,no-resolve
 - GEOIP,twitter,PROXY,no-resolve
 - MATCH,FALLBACK
-
 proxies:
-- client-fingerprint: ios
+- client-fingerprint: chrome
   flow: xtls-rprx-vision
-  name: 🇺🇸 US 001 | ⬇️ 182.00MB/s
+  name: 🇺🇸 US 001 | ⬇️ 127.41MB/s
   port: 443
   reality-opts:
-    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
-    short-id: c39cc7310a
-  server: 169.40.42.229
-  servername: yahoo.com
+    public-key: p8VhFzvFOBAhWAEAeWmwDxT3xBSRsGYixqi0qnLFnBM
+    short-id: 21270a66
+  server: tk1.high-speed-test-56424.me
+  servername: aws.amazon.com
   skip-cert-verify: false
   tls: true
   type: vless
   udp: true
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-- name: 🇨🇦 CA 001 | ⬇️ 108.87MB/s
-  network: ws
-  port: 8080
-  server: 104.18.35.86
-  servername: hhlfy.twiladaphne.ndjp.net
-  tls: false
-  type: vless
-  udp: true
-  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
-  ws-opts:
-    headers:
-      Host: hhlfy.twiladaphne.ndjp.net
-    path: /sg-melbi
-- name: 🇨🇦 CA 002 | ⬇️ 54.01MB/s
+  uuid: 37615d66-5467-44a3-bc23-f2c3bef7f761
+- name: 🇨🇦 CA 001 | ⬇️ 46.57MB/s
   network: ws
   port: 443
   server: 172.64.152.241
@@ -104,6 +87,33 @@ proxies:
     headers:
       Host: ccc.010304.xyz
     path: /fp
+- client-fingerprint: ios
+  flow: xtls-rprx-vision
+  name: 🇺🇸 US 002 | ⬇️ 41.11MB/s
+  port: 443
+  reality-opts:
+    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
+    short-id: c39cc7310a
+  server: 169.40.42.229
+  servername: yahoo.com
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+- name: 🇨🇦 CA 002 | ⬇️ 39.11MB/s
+  network: ws
+  port: 8080
+  server: 104.18.35.86
+  servername: hhlfy.twiladaphne.ndjp.net
+  tls: false
+  type: vless
+  udp: true
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  ws-opts:
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+    path: /sg-melbi
 - http-opts:
     headers:
       Host:
@@ -111,7 +121,7 @@ proxies:
     method: GET
     path:
     - /
-  name: 🇮🇪 IE 001 | ⬇️ 49.88MB/s
+  name: 🇮🇪 IE 001 | ⬇️ 27.79MB/s
   network: http
   port: 443
   server: 3.252.104.83
@@ -120,21 +130,36 @@ proxies:
   udp: true
   uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
 - cipher: aes-256-gcm
-  name: 🇮🇹 IT 001 | ⬇️ 37.62MB/s
+  name: 🇮🇹 IT 001 | ⬇️ 24.18MB/s
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 202.50.253.99
   type: ss
   udp: true
 - cipher: aes-256-gcm
-  name: 🇮🇹 IT 002 | ⬇️ 37.03MB/s
+  name: 🇮🇹 IT 002 | ⬇️ 23.88MB/s
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 202.50.253.27
   type: ss
   udp: true
+- http-opts:
+    headers:
+      Host:
+      - play.googleapis.com
+    method: GET
+    path:
+    - /
+  name: 🇪🇸 ES 001 | ⬇️ 23.46MB/s
+  network: http
+  port: 443
+  server: 51.49.126.162
+  tls: false
+  type: vless
+  udp: true
+  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
 - cipher: aes-256-gcm
-  name: 🇮🇹 IT 003 | ⬇️ 36.77MB/s
+  name: 🇮🇹 IT 003 | ⬇️ 23.28MB/s
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 202.50.253.81
@@ -147,7 +172,7 @@ proxies:
     method: GET
     path:
     - /
-  name: 🇸🇪 SE 001 | ⬇️ 33.72MB/s
+  name: 🇸🇪 SE 001 | ⬇️ 22.53MB/s
   network: http
   port: 443
   server: 51.21.247.148
@@ -155,69 +180,11 @@ proxies:
   type: vless
   udp: true
   uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
-- http-opts:
-    headers:
-      Host:
-      - play.googleapis.com
-    method: GET
-    path:
-    - /
-  name: 🇪🇸 ES 001 | ⬇️ 33.07MB/s
-  network: http
-  port: 443
-  server: 51.49.126.162
-  tls: false
-  type: vless
-  udp: true
-  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: 🇺🇸 US 002 | ⬇️ 31.82MB/s
-  port: 443
-  reality-opts:
-    public-key: p8VhFzvFOBAhWAEAeWmwDxT3xBSRsGYixqi0qnLFnBM
-    short-id: 21270a66
-  server: tk1.high-speed-test-56424.me
-  servername: aws.amazon.com
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 37615d66-5467-44a3-bc23-f2c3bef7f761
-- http-opts:
-    headers:
-      Host:
-      - play.googleapis.com
-    method: GET
-    path:
-    - /
-  name: 🇩🇪 DE 001 | ⬇️ 17.58MB/s
-  network: http
-  port: 443
-  server: 63.178.23.66
-  tls: false
-  type: vless
-  udp: true
-  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: 🇯🇵 JP 001 | ⬇️ 16.89MB/s
-  port: 46105
-  reality-opts:
-    public-key: Lk5nwDxC2tr3J7hT8emhUUiMX8cHyKX9TiRj_EnAiik
-    short-id: 28f5c1f8f98a
-  server: funagfrdfs.alixxplay.com
-  servername: www.lamer.com.sg
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
 - alpn:
   - ''
   alterId: 0
   cipher: auto
-  name: 🇨🇳 TW 001 | ⬇️ 16.83MB/s
+  name: 🇨🇳 TW 001 | ⬇️ 22.19MB/s
   network: ws
   port: 443
   server: 9641684.sdf65h4.top
@@ -231,9 +198,39 @@ proxies:
     headers:
       Host: 9641684.sdf65h4.top
     path: /
+- http-opts:
+    headers:
+      Host:
+      - play.googleapis.com
+    method: GET
+    path:
+    - /
+  name: 🇩🇪 DE 001 | ⬇️ 21.32MB/s
+  network: http
+  port: 443
+  server: 63.178.23.66
+  tls: false
+  type: vless
+  udp: true
+  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
+- http-opts:
+    headers:
+      Host:
+      - play.googleapis.com
+    method: GET
+    path:
+    - /
+  name: 🇩🇪 DE 002 | ⬇️ 20.65MB/s
+  network: http
+  port: 443
+  server: 3.79.233.186
+  tls: false
+  type: vless
+  udp: true
+  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
 - client-fingerprint: chrome
   flow: xtls-rprx-vision
-  name: 🇸🇬 SG 001 | ⬇️ 14.30MB/s
+  name: 🇸🇬 SG 001 | ⬇️ 19.93MB/s
   port: 19825
   reality-opts:
     public-key: GvvkY8xYb9QjvwvzYq_uNC4tOGd0DCxRnz6770-xgkI
@@ -245,29 +242,23 @@ proxies:
   type: vless
   udp: true
   uuid: 2d1ad594-80a4-4bfb-87a6-038e39701f51
-- http-opts:
-    headers:
-      Host:
-      - play.googleapis.com
-    method: GET
-    path:
-    - /
-  name: 🇩🇪 DE 002 | ⬇️ 11.25MB/s
-  network: http
-  port: 443
-  server: 3.79.233.186
-  tls: false
+- alpn:
+  - http/1.1
+  client-fingerprint: firefox
+  name: 🇳🇱 NL 001 | ⬇️ 18.40MB/s
+  network: ws
+  port: 2096
+  server: 144.31.34.146
+  servername: fi1.merky.one
+  tls: true
   type: vless
   udp: true
-  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
-- cipher: aes-256-cfb
-  name: 🇺🇸 US 003 | ⬇️ 10.94MB/s
-  password: amazonskr05
-  port: 443
-  server: 3.15.220.122
-  type: ss
-  udp: true
-- name: 🇺🇸 US 004 | ⬇️ 9.82MB/s
+  uuid: 6e05822a-e9da-4135-a9db-71aa07a944af
+  ws-opts:
+    headers:
+      Host: fi1.merky.one
+    path: /mky-ws-4f19c8a7
+- name: 🇺🇸 US 003 | ⬇️ 11.81MB/s
   network: ws
   port: 80
   server: support.zoom.us
@@ -281,7 +272,7 @@ proxies:
       Host: free.sahanwickramasinghe.me
     path: /
 - client-fingerprint: chrome
-  name: 🇨🇳 TW 002 | ⬇️ 6.56MB/s
+  name: 🇨🇳 TW 002 | ⬇️ 10.12MB/s
   port: 24215
   reality-opts:
     public-key: mdWKUPMVTtTbDqK10BPb89OcqBC2-Lx-4NOYtqc1GWE
@@ -293,7 +284,7 @@ proxies:
   udp: true
   uuid: 19d5a678-8396-4e3b-93da-ece618d0e83a
 - client-fingerprint: firefox
-  name: 🇳🇱 NL 001 | ⬇️ 6.50MB/s
+  name: 🇳🇱 NL 002 | ⬇️ 4.84MB/s
   network: ws
   port: 443
   server: 177.3.208.65
@@ -306,7 +297,7 @@ proxies:
     path: /vless-tr
 - client-fingerprint: chrome
   flow: xtls-rprx-vision
-  name: 🇭🇰 HK 001 | ⬇️ 1.27MB/s
+  name: 🇭🇰 HK 001 | ⬇️ 0.27MB/s
   network: tcp
   port: 9443
   reality-opts:
@@ -318,3 +309,19 @@ proxies:
   type: vless
   udp: true
   uuid: 82eb8419-59f4-4d3e-9106-d05d22af615c
+- alpn:
+  - http/1.1
+  client-fingerprint: unsafe
+  name: 🇨🇦 CA 003 | ⬇️ 0.25MB/s
+  network: ws
+  port: 443
+  server: 188.114.98.0
+  servername: fi1.merky.one
+  tls: true
+  type: vless
+  udp: true
+  uuid: 6e05822a-e9da-4135-a9db-71aa07a944af
+  ws-opts:
+    headers:
+      Host: fi1.merky.one
+    path: /mky-ws-4f19c8a7
