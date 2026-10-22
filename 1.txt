@@ -1,94 +1,62 @@
-# Custom_OpenClash_Rules
-# 英文策略组 + 完整规则 + 优化过滤
-
-# ==================== 代理提供者 Proxy Providers ====================
-proxy-providers:
-  provider1:
-    type: http
-    url: "https://sunmiao4458.github.io/free-proxy-airport/clash.yaml"
-    interval: 3600
-    path: ./proxy_provider/provider1.yaml
-    proxy: DIRECT
-    filter: "^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|防范|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|中国|CN|China|上海|北京|广州|深圳|杭州|成都|武汉|西安|回国|中转|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$"
-    health-check:
-      enable: true
-      url:  https://www.gstatic.com/generate_204
-      interval: 300
-    override:
-      udp: true
-
-  provider3:
-    type: http
-    url: "https://sub.danhu.dpdns.org/paste/26HappyMAF-TG@FProxies/clash"
-    interval: 3600
-    path: ./proxy_provider/provider3.yaml
-    proxy: DIRECT
-    filter: "^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|防范|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|中国|CN|China|上海|北京|广州|深圳|杭州|成都|武汉|西安|回国|中转|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$"
-    health-check:
-      enable: true
-      url:  https://www.gstatic.com/generate_204
-      interval: 300
-    override:
-      udp: true
-
-
-# ==================== 代理策略组 Proxy Groups ====================
-proxy-groups:
-  # 手动选择（最前）
-  - name: "PROXY"
-    type: select
-    proxies:
-      - "AUTO-FAST"
-      - DIRECT
-
-  # 自动选择
-  - name: "AUTO-FAST"
-    type: url-test
-    url: https://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    use:
-      - provider1
-      - provider3
-
-  # 故障转移
-  - name: "FALLBACK"
-    type: select
-    proxies:
-      - "DIRECT"
-      - "PROXY"
-
-# ==================== 规则提供者 Rule Providers ====================
-rule-providers:
-  Custom_Proxy_Domain:
-    behavior: domain
-    interval: 86400
-    type: http
-    url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Proxy_Domain.mrs"
-    format: mrs
-
-  Custom_Proxy_IP:
-    behavior: ipcidr
-    interval: 86400
-    type: http
-    url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Proxy_IP.mrs"
-    format: mrs
-
-# ==================== 分流规则 Rules ====================
-rules:
-  # 1. 基础局域网 / 本地直连
-  - "GEOSITE,private,DIRECT"
-  - "GEOIP,private,DIRECT,no-resolve"
-
-  # 2. 域名类规则优先（有域名时先按域名精确匹配）
-  - "GEOSITE,category-ai-!cn,PROXY"
-  - "GEOSITE,gfw,PROXY"
-  - "RULE-SET,Custom_Proxy_Domain,PROXY"
-
-  # 3. IP 类规则兜底（域名规则未命中时，再按 IP 判断）
-  - "GEOIP,telegram,PROXY,no-resolve"
-  - "RULE-SET,Custom_Proxy_IP,PROXY,no-resolve"
-  - "GEOIP,twitter,PROXY,no-resolve"
-
-  # 4. 最终兜底
-  - "MATCH,FALLBACK"
+proxies:
+- latency: 1940
+  name: '>🇳🇱NL|Ls|1004|TG@FProxies|'
+  password: 'null'
+  port: 443
+  server: 51.158.243.91
+  skip-cert-verify: true
+  speed: 327.9
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
+- latency: 1569
+  name: '>🇸🇬SG|Ms|1004|TG@FProxies| 3'
+  port: 9443
+  server: 82.102.25.210
+  skip-cert-verify: true
+  speed: 313.1
+  tls: true
+  type: http
+  udp: true
+- latency: 1679
+  name: '>🇮🇩ID|Ns|1004|TG@FProxies| 3'
+  port: 1080
+  server: 103.142.255.32
+  skip-cert-verify: true
+  speed: 303.7
+  type: socks5
+  udp: true
+- client-fingerprint: chrome
+  latency: 1532
+  name: 🇩🇪_德国丨yoyapai.com
+  network: ws
+  port: 2083
+  server: 46.101.253.244
+  servername: edge.yzkvm.top
+  skip-cert-verify: false
+  speed: 253.9
+  tls: true
+  type: vless
+  udp: true
+  uuid: bba95b1f-f48c-454b-897b-a6c6bc307df1
+  ws-opts:
+    headers:
+      Host: edge.yzkvm.top
+    path: /
+- latency: 1286
+  name: 🇺🇸US美國丨yoyapai.com_9
+  network: ws
+  port: 443
+  server: 185.193.29.123
+  servername: notls.lukongtou.eu.org
+  skip-cert-verify: false
+  speed: 243.2
+  tls: true
+  type: vless
+  udp: true
+  uuid: 1d16c6e0-1bbe-435b-b661-90043fee999c
+  ws-opts:
+    headers:
+      Host: notls.lukongtou.eu.org
+    path: Telegram-WangCai2🇨🇳
