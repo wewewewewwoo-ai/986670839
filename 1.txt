@@ -1,327 +1,94 @@
+# Custom_OpenClash_Rules
+# 英文策略组 + 完整规则 + 优化过滤
+
+# ==================== 代理提供者 Proxy Providers ====================
+proxy-providers:
+  provider1:
+    type: http
+    url: "https://sunmiao4458.github.io/free-proxy-airport/clash.yaml"
+    interval: 3600
+    path: ./proxy_provider/provider1.yaml
+    proxy: DIRECT
+    filter: "^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|防范|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|中国|CN|China|上海|北京|广州|深圳|杭州|成都|武汉|西安|回国|中转|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$"
+    health-check:
+      enable: true
+      url:  https://www.gstatic.com/generate_204
+      interval: 300
+    override:
+      udp: true
+
+  provider3:
+    type: http
+    url: "https://sub.danhu.dpdns.org/paste/26HappyMAF-TG@FProxies/clash"
+    interval: 3600
+    path: ./proxy_provider/provider3.yaml
+    proxy: DIRECT
+    filter: "^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|防范|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|中国|CN|China|上海|北京|广州|深圳|杭州|成都|武汉|西安|回国|中转|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$"
+    health-check:
+      enable: true
+      url:  https://www.gstatic.com/generate_204
+      interval: 300
+    override:
+      udp: true
+
+
+# ==================== 代理策略组 Proxy Groups ====================
 proxy-groups:
-- name: PROXY
-  type: select
-  proxies:
-  - AUTO-FAST
-  - DIRECT
-- name: AUTO-FAST
-  type: url-test
-  url: https://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - 🇺🇸 US 001 | ⬇️ 127.41MB/s
-  - 🇨🇦 CA 001 | ⬇️ 46.57MB/s
-  - 🇺🇸 US 002 | ⬇️ 41.11MB/s
-  - 🇨🇦 CA 002 | ⬇️ 39.11MB/s
-  - 🇮🇪 IE 001 | ⬇️ 27.79MB/s
-  - 🇮🇹 IT 001 | ⬇️ 24.18MB/s
-  - 🇮🇹 IT 002 | ⬇️ 23.88MB/s
-  - 🇪🇸 ES 001 | ⬇️ 23.46MB/s
-  - 🇮🇹 IT 003 | ⬇️ 23.28MB/s
-  - 🇸🇪 SE 001 | ⬇️ 22.53MB/s
-  - 🇨🇳 TW 001 | ⬇️ 22.19MB/s
-  - 🇩🇪 DE 001 | ⬇️ 21.32MB/s
-  - 🇩🇪 DE 002 | ⬇️ 20.65MB/s
-  - 🇸🇬 SG 001 | ⬇️ 19.93MB/s
-  - 🇳🇱 NL 001 | ⬇️ 18.40MB/s
-  - 🇺🇸 US 003 | ⬇️ 11.81MB/s
-  - 🇨🇳 TW 002 | ⬇️ 10.12MB/s
-  - 🇳🇱 NL 002 | ⬇️ 4.84MB/s
-  - 🇭🇰 HK 001 | ⬇️ 0.27MB/s
-  - 🇨🇦 CA 003 | ⬇️ 0.25MB/s
-- name: FALLBACK
-  type: select
-  proxies:
-  - PROXY
-  - DIRECT
+  # 手动选择（最前）
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "AUTO-FAST"
+      - DIRECT
+
+  # 自动选择
+  - name: "AUTO-FAST"
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    use:
+      - provider1
+      - provider3
+
+  # 故障转移
+  - name: "FALLBACK"
+    type: select
+    proxies:
+      - "DIRECT"
+      - "PROXY"
+
+# ==================== 规则提供者 Rule Providers ====================
 rule-providers:
   Custom_Proxy_Domain:
     behavior: domain
     interval: 86400
     type: http
-    url: https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Proxy_Domain.mrs
+    url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Proxy_Domain.mrs"
     format: mrs
+
   Custom_Proxy_IP:
     behavior: ipcidr
     interval: 86400
     type: http
-    url: https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Proxy_IP.mrs
+    url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Proxy_IP.mrs"
     format: mrs
+
+# ==================== 分流规则 Rules ====================
 rules:
-- GEOSITE,private,DIRECT
-- GEOIP,private,DIRECT,no-resolve
-- GEOSITE,category-ai-!cn,PROXY
-- GEOSITE,gfw,PROXY
-- RULE-SET,Custom_Proxy_Domain,PROXY
-- GEOIP,telegram,PROXY,no-resolve
-- RULE-SET,Custom_Proxy_IP,PROXY,no-resolve
-- GEOIP,twitter,PROXY,no-resolve
-- MATCH,FALLBACK
-proxies:
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: 🇺🇸 US 001 | ⬇️ 127.41MB/s
-  port: 443
-  reality-opts:
-    public-key: p8VhFzvFOBAhWAEAeWmwDxT3xBSRsGYixqi0qnLFnBM
-    short-id: 21270a66
-  server: tk1.high-speed-test-56424.me
-  servername: aws.amazon.com
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 37615d66-5467-44a3-bc23-f2c3bef7f761
-- name: 🇨🇦 CA 001 | ⬇️ 46.57MB/s
-  network: ws
-  port: 443
-  server: 172.64.152.241
-  servername: ccc.010304.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: d342d11e-d224-4463-b982-532309285094
-  ws-opts:
-    headers:
-      Host: ccc.010304.xyz
-    path: /fp
-- client-fingerprint: ios
-  flow: xtls-rprx-vision
-  name: 🇺🇸 US 002 | ⬇️ 41.11MB/s
-  port: 443
-  reality-opts:
-    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
-    short-id: c39cc7310a
-  server: 169.40.42.229
-  servername: yahoo.com
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-- name: 🇨🇦 CA 002 | ⬇️ 39.11MB/s
-  network: ws
-  port: 8080
-  server: 104.18.35.86
-  servername: hhlfy.twiladaphne.ndjp.net
-  tls: false
-  type: vless
-  udp: true
-  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
-  ws-opts:
-    headers:
-      Host: hhlfy.twiladaphne.ndjp.net
-    path: /sg-melbi
-- http-opts:
-    headers:
-      Host:
-      - play.googleapis.com
-    method: GET
-    path:
-    - /
-  name: 🇮🇪 IE 001 | ⬇️ 27.79MB/s
-  network: http
-  port: 443
-  server: 3.252.104.83
-  tls: false
-  type: vless
-  udp: true
-  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
-- cipher: aes-256-gcm
-  name: 🇮🇹 IT 001 | ⬇️ 24.18MB/s
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 202.50.253.99
-  type: ss
-  udp: true
-- cipher: aes-256-gcm
-  name: 🇮🇹 IT 002 | ⬇️ 23.88MB/s
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 202.50.253.27
-  type: ss
-  udp: true
-- http-opts:
-    headers:
-      Host:
-      - play.googleapis.com
-    method: GET
-    path:
-    - /
-  name: 🇪🇸 ES 001 | ⬇️ 23.46MB/s
-  network: http
-  port: 443
-  server: 51.49.126.162
-  tls: false
-  type: vless
-  udp: true
-  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
-- cipher: aes-256-gcm
-  name: 🇮🇹 IT 003 | ⬇️ 23.28MB/s
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 202.50.253.81
-  type: ss
-  udp: true
-- http-opts:
-    headers:
-      Host:
-      - play.googleapis.com
-    method: GET
-    path:
-    - /
-  name: 🇸🇪 SE 001 | ⬇️ 22.53MB/s
-  network: http
-  port: 443
-  server: 51.21.247.148
-  tls: false
-  type: vless
-  udp: true
-  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
-- alpn:
-  - ''
-  alterId: 0
-  cipher: auto
-  name: 🇨🇳 TW 001 | ⬇️ 22.19MB/s
-  network: ws
-  port: 443
-  server: 9641684.sdf65h4.top
-  servername: 9641684.sdf65h4.top
-  skip-cert-verify: true
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 250c015d-bab0-4ed3-b638-b4eda48f5840
-  ws-opts:
-    headers:
-      Host: 9641684.sdf65h4.top
-    path: /
-- http-opts:
-    headers:
-      Host:
-      - play.googleapis.com
-    method: GET
-    path:
-    - /
-  name: 🇩🇪 DE 001 | ⬇️ 21.32MB/s
-  network: http
-  port: 443
-  server: 63.178.23.66
-  tls: false
-  type: vless
-  udp: true
-  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
-- http-opts:
-    headers:
-      Host:
-      - play.googleapis.com
-    method: GET
-    path:
-    - /
-  name: 🇩🇪 DE 002 | ⬇️ 20.65MB/s
-  network: http
-  port: 443
-  server: 3.79.233.186
-  tls: false
-  type: vless
-  udp: true
-  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: 🇸🇬 SG 001 | ⬇️ 19.93MB/s
-  port: 19825
-  reality-opts:
-    public-key: GvvkY8xYb9QjvwvzYq_uNC4tOGd0DCxRnz6770-xgkI
-    short-id: 6ba85179e30d4fc2
-  server: sg2-8sb.6121999.dpdns.org
-  servername: sg2-8sb.6121999.dpdns.org
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 2d1ad594-80a4-4bfb-87a6-038e39701f51
-- alpn:
-  - http/1.1
-  client-fingerprint: firefox
-  name: 🇳🇱 NL 001 | ⬇️ 18.40MB/s
-  network: ws
-  port: 2096
-  server: 144.31.34.146
-  servername: fi1.merky.one
-  tls: true
-  type: vless
-  udp: true
-  uuid: 6e05822a-e9da-4135-a9db-71aa07a944af
-  ws-opts:
-    headers:
-      Host: fi1.merky.one
-    path: /mky-ws-4f19c8a7
-- name: 🇺🇸 US 003 | ⬇️ 11.81MB/s
-  network: ws
-  port: 80
-  server: support.zoom.us
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  udp: true
-  uuid: fcdb24e3-5e66-4c45-b89e-ac9441f4dcda
-  ws-opts:
-    headers:
-      Host: free.sahanwickramasinghe.me
-    path: /
-- client-fingerprint: chrome
-  name: 🇨🇳 TW 002 | ⬇️ 10.12MB/s
-  port: 24215
-  reality-opts:
-    public-key: mdWKUPMVTtTbDqK10BPb89OcqBC2-Lx-4NOYtqc1GWE
-  server: hinet1.2yly.com
-  servername: addons.mozilla.org
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 19d5a678-8396-4e3b-93da-ece618d0e83a
-- client-fingerprint: firefox
-  name: 🇳🇱 NL 002 | ⬇️ 4.84MB/s
-  network: ws
-  port: 443
-  server: 177.3.208.65
-  servername: tgmansion.site
-  tls: true
-  type: vless
-  udp: true
-  uuid: 4f34bc04-479c-49ba-91a8-6bb9ed15031c
-  ws-opts:
-    path: /vless-tr
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: 🇭🇰 HK 001 | ⬇️ 0.27MB/s
-  network: tcp
-  port: 9443
-  reality-opts:
-    public-key: 0hIFPaEn4RdFib8_eP8HYxMywR5izEwM3JA2W1Zo8U4
-    short-id: b390142456517acc
-  server: 45.207.157.8
-  servername: www.amazon.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 82eb8419-59f4-4d3e-9106-d05d22af615c
-- alpn:
-  - http/1.1
-  client-fingerprint: unsafe
-  name: 🇨🇦 CA 003 | ⬇️ 0.25MB/s
-  network: ws
-  port: 443
-  server: 188.114.98.0
-  servername: fi1.merky.one
-  tls: true
-  type: vless
-  udp: true
-  uuid: 6e05822a-e9da-4135-a9db-71aa07a944af
-  ws-opts:
-    headers:
-      Host: fi1.merky.one
-    path: /mky-ws-4f19c8a7
+  # 1. 基础局域网 / 本地直连
+  - "GEOSITE,private,DIRECT"
+  - "GEOIP,private,DIRECT,no-resolve"
+
+  # 2. 域名类规则优先（有域名时先按域名精确匹配）
+  - "GEOSITE,category-ai-!cn,PROXY"
+  - "GEOSITE,gfw,PROXY"
+  - "RULE-SET,Custom_Proxy_Domain,PROXY"
+
+  # 3. IP 类规则兜底（域名规则未命中时，再按 IP 判断）
+  - "GEOIP,telegram,PROXY,no-resolve"
+  - "RULE-SET,Custom_Proxy_IP,PROXY,no-resolve"
+  - "GEOIP,twitter,PROXY,no-resolve"
+
+  # 4. 最终兜底
+  - "MATCH,FALLBACK"
