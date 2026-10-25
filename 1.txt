@@ -7,35 +7,12 @@ unified-delay: true
 tcp-concurrent: true
 global-client-fingerprint: chrome
 proxies:
-- name: '[freeSub#403] C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_17fbfe15'
-  password: '1234'
-  port: 2080
-  server: 54.151.160.36
-  skip-cert-verify: true
-  type: http
 - name: '[freeSub#244] D🔴🇫🇷hos[🤖📺🎭🎪]_dokng.com_13bb1fbc'
   port: 443
   server: 103.82.101.43
   skip-cert-verify: true
   sni: 76d1d3ecadca44efa2339867d7dfc9a1-8e928736d0f8dbdc.apache-iv.com
   tls: true
-  type: http
-- client-fingerprint: edge
-  flow: xtls-rprx-vision
-  name: 🇷🇺 俄罗斯 | RUS
-  network: tcp
-  port: 443
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-  server: 193.223.104.140
-  servername: abuse.ozon.ru
-  tls: true
-  type: vless
-  udp: true
-  uuid: 680e92ac-1688-49e0-af96-7327fbc30ce8
-- name: '[freeSub#020] U⚪🏳️ukn_dokng.com_5da2fc4b'
-  port: 17981
-  server: 119.188.131.55
   type: http
 - client-fingerprint: firefox
   flow: xtls-rprx-vision
@@ -50,6 +27,70 @@ proxies:
   type: vless
   udp: true
   uuid: 8a1f8853-9a71-4ef2-a64c-4f0a94c2e14b
+- name: '[freeSub#047] D🔴🇫🇷hos[🎬🤖📺🎭]_dokng.com_29f6fb8a'
+  port: 6103
+  server: 87.98.174.157
+  skip-cert-verify: true
+  tls: true
+  type: http
+- cipher: chacha20-ietf-poly1305
+  name: '[Eternity#132] 🇬🇧GB-82.38.31.190-0186 | 0.0MB'
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.190
+  type: ss
+- name: '[freeSub#115] D🔴🇩🇪hos[🎬🤖📺🎭]_dokng.com_e19d9a95'
+  password: null
+  port: 9002
+  server: 158.173.154.2
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[NoMoreWalls#256] 🇩🇪DE_8|4.3MB/s'
+  password: None
+  port: 9002
+  server: 158.173.154.2
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[freeSub#020] U⚪🏳️ukn_dokng.com_5da2fc4b'
+  port: 17981
+  server: 119.188.131.55
+  type: http
+- name: '[freeSub#403] C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_17fbfe15'
+  password: '1234'
+  port: 2080
+  server: 54.151.160.36
+  skip-cert-verify: true
+  type: http
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: 🇬🇧_英国_140
+  port: 443
+  reality-opts:
+    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
+    short-id: c39cc7310a
+  server: 82.39.171.12
+  servername: yahoo.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: 🇩🇪_德国_128
+  port: 443
+  reality-opts:
+    public-key: lHCkAu_DOVFtE-iL2JGrPt44QeTCFijXuRfuGaSni3Q
+    short-id: 9e4eced6e98ed4d4
+  server: 130.17.25.67
+  servername: github.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 1c5ed2e1-56da-41ab-9a78-159d9892ec17
 proxy-groups:
 - name: PROXY
   type: select
@@ -62,11 +103,16 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - '[freeSub#403] C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_17fbfe15'
   - '[freeSub#244] D🔴🇫🇷hos[🤖📺🎭🎪]_dokng.com_13bb1fbc'
-  - 🇷🇺 俄罗斯 | RUS
-  - '[freeSub#020] U⚪🏳️ukn_dokng.com_5da2fc4b'
   - 🇬🇧 英国 | GBR
+  - '[freeSub#047] D🔴🇫🇷hos[🎬🤖📺🎭]_dokng.com_29f6fb8a'
+  - '[Eternity#132] 🇬🇧GB-82.38.31.190-0186 | 0.0MB'
+  - '[freeSub#115] D🔴🇩🇪hos[🎬🤖📺🎭]_dokng.com_e19d9a95'
+  - '[NoMoreWalls#256] 🇩🇪DE_8|4.3MB/s'
+  - '[freeSub#020] U⚪🏳️ukn_dokng.com_5da2fc4b'
+  - '[freeSub#403] C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_17fbfe15'
+  - 🇬🇧_英国_140
+  - 🇩🇪_德国_128
 - name: FALLBACK
   type: select
   proxies:
