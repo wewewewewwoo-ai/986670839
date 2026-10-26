@@ -7,11 +7,98 @@ unified-delay: true
 tcp-concurrent: true
 global-client-fingerprint: chrome
 proxies:
-- name: '[freeSub#244] D🔴🇫🇷hos[🤖📺🎭🎪]_dokng.com_13bb1fbc'
-  port: 443
-  server: 103.82.101.43
+- name: 🇸🇬SG_1|2.8MB/s
+  port: 10007
+  server: 118.25.131.160
   skip-cert-verify: true
-  sni: 76d1d3ecadca44efa2339867d7dfc9a1-8e928736d0f8dbdc.apache-iv.com
+  tls: true
+  type: http
+- name: '[freeSub#039] U⚪🏳️ukn[🎞️]_dokng.com_23257430'
+  password: null
+  port: 17981
+  server: 120.232.115.170
+  type: http
+- alterId: '0'
+  cipher: auto
+  name: '[freeSub#016] C🟠🇨🇳hos[🎞️📦]_dokng.com_c6c209ee'
+  network: ws
+  port: 10086
+  server: 39.108.113.127
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 2eb25c1e-c3b5-45cf-9afd-dd3ddc00da10
+  ws-opts:
+    headers: {}
+    path: /
+- name: '[freeSub#250] D🔴🇯🇵hos[🎬🤖📺🎭]_dokng.com_8eb7da94'
+  password: null
+  port: 343
+  server: 133.18.200.207
+  skip-cert-verify: true
+  tls: true
+  type: http
+- client-fingerprint: firefox
+  flow: xtls-rprx-vision
+  name: 电报群：t.me/vvkj11
+  port: 443
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+  server: 45.151.71.169
+  servername: abuse.ozon.ru
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 0b6a937e-5b0e-49ca-b31e-f03f290e97cf
+- name: DK_speednode_0009
+  port: 9002
+  server: 158.173.154.1
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: 🇩🇪DE_5|1.1MB/s
+  password: None
+  port: 443
+  server: 149.36.50.129
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: DE_speednode_0007
+  port: 443
+  server: 213.109.163.119
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: 🇮🇹IT_2|1.6MB/s
+  port: 443
+  server: 185.183.105.130
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[freeSub#262] D🔴🇫🇷hos[🎬🤖📺🎭]_dokng.com_e3642aa7'
+  port: 443
+  server: 103.82.101.44
+  skip-cert-verify: true
+  sni: f3a61d8406d537345747f99f8a281007-3f754ed5da1bba09.apache-iv.com
+  tls: true
+  type: http
+- name: 🇧🇪BE_1|1.0MB/s|R002-260618
+  password: None
+  port: 443
+  server: 146.70.176.242
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: 🇬🇧GB_4|1.8MB/s
+  password: None
+  port: 443
+  server: 37.120.233.50
+  skip-cert-verify: true
   tls: true
   type: http
 - client-fingerprint: firefox
@@ -21,76 +108,185 @@ proxies:
   port: 443
   reality-opts:
     public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-  server: 45.151.71.165
+  server: 45.151.71.159
   servername: gb.ozon.ru
   tls: true
   type: vless
   udp: true
-  uuid: 8a1f8853-9a71-4ef2-a64c-4f0a94c2e14b
-- name: '[freeSub#047] D🔴🇫🇷hos[🎬🤖📺🎭]_dokng.com_29f6fb8a'
-  port: 6103
-  server: 87.98.174.157
+  uuid: 680e92ac-1688-49e0-af96-7327fbc30ce8
+- name: 🇨🇭CH_3|1.1MB/s
+  password: None
+  port: 443
+  server: 31.7.62.50
   skip-cert-verify: true
   tls: true
   type: http
-- cipher: chacha20-ietf-poly1305
-  name: '[Eternity#132] 🇬🇧GB-82.38.31.190-0186 | 0.0MB'
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  port: 8080
-  server: 82.38.31.190
-  type: ss
-- name: '[freeSub#115] D🔴🇩🇪hos[🎬🤖📺🎭]_dokng.com_e19d9a95'
-  password: null
-  port: 9002
-  server: 158.173.154.2
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[NoMoreWalls#256] 🇩🇪DE_8|4.3MB/s'
+- name: '[freeSub#221] D🔴🇩🇪hos[🎬🤖📺🎭]_dokng.com_a3222b8d'
   password: None
   port: 9002
   server: 158.173.154.2
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[freeSub#020] U⚪🏳️ukn_dokng.com_5da2fc4b'
-  port: 17981
-  server: 119.188.131.55
-  type: http
-- name: '[freeSub#403] C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_17fbfe15'
-  password: '1234'
-  port: 2080
-  server: 54.151.160.36
+- name: '[freeSub#091] D🔴🇳🇱hos[🎬🤖📺🎭]_dokng.com_b74edc3f'
+  port: 443
+  server: 185.246.153.42
   skip-cert-verify: true
+  sni: 482c8436a1f7c908b48a1757abb5dd79-3791fb4df2db250b.apache-iv.com
+  tls: true
   type: http
-- client-fingerprint: chrome
+- name: PL_speednode_0040
+  password: None
+  port: 443
+  server: 37.120.156.34
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: 🇨🇿CZ_2|1.8MB/s
+  port: 443
+  server: 185.216.35.66
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: IE_speednode_0021
+  port: 443
+  server: 18.200.158.139
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: 🇮🇹IT_1|1.2MB/s
+  port: 443
+  server: 185.183.105.146
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[freeSub#298] D🔴🇳🇱hos[🎬🤖📺🎭]_dokng.com_c745045d'
+  port: 443
+  server: 185.246.153.28
+  skip-cert-verify: true
+  sni: 4a8c2906c96058315dffbc2b0e7ff19b-0c66a58858a795df.apache-iv.com
+  tls: true
+  type: http
+- client-fingerprint: firefox
   flow: xtls-rprx-vision
-  name: 🇬🇧_英国_140
+  name: 🇷🇺_俄罗斯_8
   port: 443
   reality-opts:
-    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
-    short-id: c39cc7310a
-  server: 82.39.171.12
-  servername: yahoo.com
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+  server: 193.160.141.8
+  servername: ozon.ru
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: 🇩🇪_德国_128
+  uuid: 680e92ac-1688-49e0-af96-7327fbc30ce8
+- name: 🇦🇹AT_1|2.4MB/s
   port: 443
-  reality-opts:
-    public-key: lHCkAu_DOVFtE-iL2JGrPt44QeTCFijXuRfuGaSni3Q
-    short-id: 9e4eced6e98ed4d4
-  server: 130.17.25.67
-  servername: github.com
+  server: 146.70.244.2
   skip-cert-verify: true
   tls: true
-  type: vless
+  type: http
+- name: '[NoMoreWalls#266] 🇳🇱NL_6|2.0MB/s'
+  password: None
+  port: 10808
+  server: 77.221.148.116
+  type: socks5
   udp: true
-  uuid: 1c5ed2e1-56da-41ab-9a78-159d9892ec17
+- name: NL_speednode_0036
+  password: None
+  port: 9002
+  server: 84.17.47.148
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[freeSub#140] A🟢🇿🇦res[🎬🤖📺🎭]_dokng.com_71f71160'
+  port: 8443
+  server: 154.81.36.92
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: DK_speednode_0010
+  port: 9002
+  server: 158.173.154.5
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: 🇬🇧GB_2|1.4MB/s
+  password: None
+  port: 443
+  server: 37.120.233.18
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[freeSub#348] D🔴🇪🇸hos[🎬🤖📺🎭]_dokng.com_d7f07cb0'
+  port: 8090
+  server: 80.24.34.107
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[freeSub#230] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7495908f'
+  password: null
+  port: 8443
+  server: 44.229.69.166
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: 🇵🇱PL_1|1.3MB/s
+  password: None
+  port: 443
+  server: 151.115.54.133
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: 🇩🇰DK_1|2.5MB/s|P002-260618
+  password: None
+  port: 9443
+  server: 185.245.84.50
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: FR_speednode_0013
+  port: 8090
+  server: 83.206.1.225
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: NL_speednode_0038
+  password: None
+  port: 9002
+  server: 84.17.47.149
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[freeSub#185] U⚪🏳️ukn[🎬📺🎭🎪]_dokng.com_686b169b'
+  password: freeuser1
+  port: 9251
+  server: nl207.freeconnect.link
+  sni: nl207.freeconnect.link
+  tls: true
+  type: http
+- name: 🇮🇪IE_2|1.4MB/s
+  password: None
+  port: 443
+  server: 149.88.96.1
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: 🇩🇪DE_4|2.0MB/s
+  password: None
+  port: 443
+  server: 149.36.50.1
+  skip-cert-verify: true
+  tls: true
+  type: http
 proxy-groups:
 - name: PROXY
   type: select
@@ -103,16 +299,43 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - '[freeSub#244] D🔴🇫🇷hos[🤖📺🎭🎪]_dokng.com_13bb1fbc'
+  - 🇸🇬SG_1|2.8MB/s
+  - '[freeSub#039] U⚪🏳️ukn[🎞️]_dokng.com_23257430'
+  - '[freeSub#016] C🟠🇨🇳hos[🎞️📦]_dokng.com_c6c209ee'
+  - '[freeSub#250] D🔴🇯🇵hos[🎬🤖📺🎭]_dokng.com_8eb7da94'
+  - 电报群：t.me/vvkj11
+  - DK_speednode_0009
+  - 🇩🇪DE_5|1.1MB/s
+  - DE_speednode_0007
+  - 🇮🇹IT_2|1.6MB/s
+  - '[freeSub#262] D🔴🇫🇷hos[🎬🤖📺🎭]_dokng.com_e3642aa7'
+  - 🇧🇪BE_1|1.0MB/s|R002-260618
+  - 🇬🇧GB_4|1.8MB/s
   - 🇬🇧 英国 | GBR
-  - '[freeSub#047] D🔴🇫🇷hos[🎬🤖📺🎭]_dokng.com_29f6fb8a'
-  - '[Eternity#132] 🇬🇧GB-82.38.31.190-0186 | 0.0MB'
-  - '[freeSub#115] D🔴🇩🇪hos[🎬🤖📺🎭]_dokng.com_e19d9a95'
-  - '[NoMoreWalls#256] 🇩🇪DE_8|4.3MB/s'
-  - '[freeSub#020] U⚪🏳️ukn_dokng.com_5da2fc4b'
-  - '[freeSub#403] C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_17fbfe15'
-  - 🇬🇧_英国_140
-  - 🇩🇪_德国_128
+  - 🇨🇭CH_3|1.1MB/s
+  - '[freeSub#221] D🔴🇩🇪hos[🎬🤖📺🎭]_dokng.com_a3222b8d'
+  - '[freeSub#091] D🔴🇳🇱hos[🎬🤖📺🎭]_dokng.com_b74edc3f'
+  - PL_speednode_0040
+  - 🇨🇿CZ_2|1.8MB/s
+  - IE_speednode_0021
+  - 🇮🇹IT_1|1.2MB/s
+  - '[freeSub#298] D🔴🇳🇱hos[🎬🤖📺🎭]_dokng.com_c745045d'
+  - 🇷🇺_俄罗斯_8
+  - 🇦🇹AT_1|2.4MB/s
+  - '[NoMoreWalls#266] 🇳🇱NL_6|2.0MB/s'
+  - NL_speednode_0036
+  - '[freeSub#140] A🟢🇿🇦res[🎬🤖📺🎭]_dokng.com_71f71160'
+  - DK_speednode_0010
+  - 🇬🇧GB_2|1.4MB/s
+  - '[freeSub#348] D🔴🇪🇸hos[🎬🤖📺🎭]_dokng.com_d7f07cb0'
+  - '[freeSub#230] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7495908f'
+  - 🇵🇱PL_1|1.3MB/s
+  - 🇩🇰DK_1|2.5MB/s|P002-260618
+  - FR_speednode_0013
+  - NL_speednode_0038
+  - '[freeSub#185] U⚪🏳️ukn[🎬📺🎭🎪]_dokng.com_686b169b'
+  - 🇮🇪IE_2|1.4MB/s
+  - 🇩🇪DE_4|2.0MB/s
 - name: FALLBACK
   type: select
   proxies:
