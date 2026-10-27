@@ -7,38 +7,14 @@ unified-delay: true
 tcp-concurrent: true
 global-client-fingerprint: chrome
 proxies:
-- name: '[CN] 01 - 3.0MB/s'
-  password: null
-  port: 17981
-  server: 119.188.131.55
-  type: http
-- alterId: '0'
-  cipher: auto
-  name: '[CN] 02 - 2.6MB/s'
-  network: ws
-  port: 10086
-  server: 39.108.113.127
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 2eb25c1e-c3b5-45cf-9afd-dd3ddc00da10
-  ws-opts:
-    headers: {}
-    path: /
-- name: '[CN] 03 - 2.1MB/s'
-  password: null
-  port: 17981
-  server: 120.232.115.170
-  type: http
-- name: '[DE] 01 - 1.4MB/s'
-  password: None
+- name: '[DE] 01 - 1.3MB/s'
   port: 9002
-  server: 158.173.154.3
+  server: 158.173.154.1
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[DE] 02 - 1.2MB/s'
+  udp: true
+- name: '[DE] 02 - 1.3MB/s'
   port: 443
   server: 213.109.163.119
   skip-cert-verify: true
@@ -46,86 +22,15 @@ proxies:
   type: http
   udp: true
 - name: '[DE] 03 - 1.2MB/s'
-  port: 443
-  server: 79.76.126.155
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[FR] 01 - 1.3MB/s'
-  password: null
-  port: 443
-  server: 51.210.167.149
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[FR] 02 - 1.3MB/s'
   password: None
-  port: 6103
-  server: 87.98.174.157
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[FR] 03 - 1.2MB/s'
-  password: None
-  port: 443
-  server: 51.210.167.149
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[FR] 04 - 1.2MB/s'
-  port: 443
-  server: 103.82.101.44
-  skip-cert-verify: true
-  sni: f3a61d8406d537345747f99f8a281007-3f754ed5da1bba09.apache-iv.com
-  tls: true
-  type: http
-- name: '[FR] 05 - 1.2MB/s'
-  password: freeuser1
-  port: 9251
-  server: fr017.freeconnect.link
-  skip-cert-verify: true
-  sni: fr017.freeconnect.link
-  tls: true
-  type: http
-- name: '[HK] 01 - 2.6MB/s'
-  port: 31343
-  server: 120.232.204.58
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[KR] 01 - 1.9MB/s'
-  port: 12121
-  server: 112.216.54.226
-  type: http
-- client-fingerprint: firefox
-  flow: xtls-rprx-vision
-  name: '[RU] 01 - 1.2MB/s'
-  port: 443
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-  server: 193.160.141.8
-  servername: ozon.ru
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 680e92ac-1688-49e0-af96-7327fbc30ce8
-- name: '[RU] 02 - 1.2MB/s'
-  password: None
-  port: 8443
-  server: 87.242.85.187
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[SG] 01 - 3.1MB/s'
-  port: 10007
-  server: 118.25.131.160
+  port: 9002
+  server: 158.173.154.3
   skip-cert-verify: true
   tls: true
   type: http
 - client-fingerprint: chrome
   flow: xtls-rprx-vision
-  name: '[TR] 01 - 1.3MB/s'
+  name: '[FR] 01 - 1.3MB/s'
   network: tcp
   port: 443
   reality-opts:
@@ -136,7 +41,53 @@ proxies:
   type: vless
   udp: true
   uuid: fd0a5c32-afc0-4d57-b95a-ca6ec8f93e87
-- name: '[TW] 01 - 2.3MB/s'
+- name: '[HK] 01 - 2.9MB/s'
+  port: 31343
+  server: 120.232.204.58
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[IT] 01 - 1.2MB/s'
+  port: 443
+  server: 95.229.15.89
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[JP] 01 - 2.8MB/s'
+  port: 10007
+  server: 118.25.131.160
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[NL] 01 - 1.2MB/s'
+  password: None
+  port: 443
+  server: 185.93.106.214
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[RU] 01 - 1.2MB/s'
+  password: null
+  port: 8443
+  server: 87.242.85.187
+  skip-cert-verify: true
+  tls: true
+  type: http
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: '[SG] 01 - 1.6MB/s'
+  port: 19825
+  reality-opts:
+    public-key: GvvkY8xYb9QjvwvzYq_uNC4tOGd0DCxRnz6770-xgkI
+    short-id: 6ba85179e30d4fc2
+  server: sg2-8sb.6121999.dpdns.org
+  servername: sg2-8sb.6121999.dpdns.org
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 2d1ad594-80a4-4bfb-87a6-038e39701f51
+- name: '[TW] 01 - 2.8MB/s'
   password: 0324fbc29561
   port: 443
   server: er8u54dh.df6h451rh.xin
@@ -144,7 +95,7 @@ proxies:
   sni: px.ads.linkedin.com
   type: anytls
   udp: true
-- name: '[TW] 02 - 2.2MB/s'
+- name: '[TW] 02 - 2.0MB/s'
   password: 0324fbc29561
   port: 443
   server: 684616s4.df6h451rh.xin
@@ -152,12 +103,6 @@ proxies:
   sni: px.ads.linkedin.com
   type: anytls
   udp: true
-- name: '[UK] 01 - 1.2MB/s'
-  port: 443
-  server: 95.229.15.89
-  skip-cert-verify: true
-  tls: true
-  type: http
 proxy-groups:
 - name: PROXY
   type: select
@@ -170,26 +115,18 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - '[CN] 01 - 3.0MB/s'
-  - '[CN] 02 - 2.6MB/s'
-  - '[CN] 03 - 2.1MB/s'
-  - '[DE] 01 - 1.4MB/s'
-  - '[DE] 02 - 1.2MB/s'
+  - '[DE] 01 - 1.3MB/s'
+  - '[DE] 02 - 1.3MB/s'
   - '[DE] 03 - 1.2MB/s'
   - '[FR] 01 - 1.3MB/s'
-  - '[FR] 02 - 1.3MB/s'
-  - '[FR] 03 - 1.2MB/s'
-  - '[FR] 04 - 1.2MB/s'
-  - '[FR] 05 - 1.2MB/s'
-  - '[HK] 01 - 2.6MB/s'
-  - '[KR] 01 - 1.9MB/s'
+  - '[HK] 01 - 2.9MB/s'
+  - '[IT] 01 - 1.2MB/s'
+  - '[JP] 01 - 2.8MB/s'
+  - '[NL] 01 - 1.2MB/s'
   - '[RU] 01 - 1.2MB/s'
-  - '[RU] 02 - 1.2MB/s'
-  - '[SG] 01 - 3.1MB/s'
-  - '[TR] 01 - 1.3MB/s'
-  - '[TW] 01 - 2.3MB/s'
-  - '[TW] 02 - 2.2MB/s'
-  - '[UK] 01 - 1.2MB/s'
+  - '[SG] 01 - 1.6MB/s'
+  - '[TW] 01 - 2.8MB/s'
+  - '[TW] 02 - 2.0MB/s'
 - name: FALLBACK
   type: select
   proxies:
