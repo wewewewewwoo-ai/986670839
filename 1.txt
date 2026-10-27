@@ -7,41 +7,34 @@ unified-delay: true
 tcp-concurrent: true
 global-client-fingerprint: chrome
 proxies:
-- name: '[FR] 01 - 2.0MB/s'
-  port: 9090
-  server: 128.199.116.219
+- name: '[DE] 01 - 2.2MB/s'
+  port: 443
+  server: 79.76.126.155
+  skip-cert-verify: true
+  tls: true
   type: http
-- name: '[HK] 01 - 2.4MB/s'
+- name: '[DE] 02 - 2.0MB/s'
+  port: 443
+  server: 87.106.223.158
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[FR] 01 - 2.2MB/s'
+  password: null
+  port: 10007
+  server: 118.25.131.160
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[HK] 01 - 3.7MB/s'
   port: 31343
   server: 120.232.204.58
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[JP] 01 - 2.4MB/s'
-  password: null
-  port: 343
-  server: 133.18.200.207
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[MY] 01 - 3.3MB/s'
-  password: null
-  port: 9443
-  server: 152.233.3.14
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[NL] 01 - 2.1MB/s'
-  password: 'null'
-  port: 443
-  server: 185.140.209.235
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[US] 01 - 2.2MB/s'
-  password: None
-  port: 443
-  server: 45.63.38.134
+- name: '[US] 01 - 2.1MB/s'
+  port: 8443
+  server: 154.81.36.92
   skip-cert-verify: true
   tls: true
   type: http
@@ -57,12 +50,11 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - '[FR] 01 - 2.0MB/s'
-  - '[HK] 01 - 2.4MB/s'
-  - '[JP] 01 - 2.4MB/s'
-  - '[MY] 01 - 3.3MB/s'
-  - '[NL] 01 - 2.1MB/s'
-  - '[US] 01 - 2.2MB/s'
+  - '[DE] 01 - 2.2MB/s'
+  - '[DE] 02 - 2.0MB/s'
+  - '[FR] 01 - 2.2MB/s'
+  - '[HK] 01 - 3.7MB/s'
+  - '[US] 01 - 2.1MB/s'
 - name: FALLBACK
   type: select
   proxies:
