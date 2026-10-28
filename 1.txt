@@ -7,72 +7,47 @@ unified-delay: true
 tcp-concurrent: true
 global-client-fingerprint: chrome
 proxies:
-- name: '[FR] 01 - 3.1MB/s'
-  password: '1234'
-  port: 2080
-  server: 54.151.242.187
-  skip-cert-verify: true
-  type: http
-- name: '[FR] 02 - 2.6MB/s'
-  password: None
-  port: 443
-  server: 51.210.167.149
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[FR] 03 - 1.9MB/s'
-  port: 443
-  server: 103.82.101.43
-  skip-cert-verify: true
-  sni: 76d1d3ecadca44efa2339867d7dfc9a1-8e928736d0f8dbdc.apache-iv.com
-  tls: true
-  type: http
-- name: '[HK] 01 - 2.5MB/s'
+- name: '[HK] 01 - 2.9MB/s'
   port: 31343
   server: 120.232.204.58
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[ID] 01 - 2.4MB/s'
+- name: '[HK] 02 - 2.5MB/s'
   port: 443
-  server: 178.248.73.58
+  server: 183.179.162.50
+  tls: true
+  type: http
+- name: '[JP] 01 - 2.3MB/s'
+  port: 40583
+  server: 120.232.204.58
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
-- flow: xtls-rprx-vision
-  name: '[JP] 01 - 2.5MB/s'
-  port: 443
-  server: jp3.443e206c-664c-7f0f-0128-5a86270b88f1.48d6ae8e.the-best-airport.com
-  servername: baidu.com
+- name: '[JP] 02 - 648KB/s'
+  port: 8080
+  server: 139.162.78.109
   skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: d7a9e66a-fc7f-4d58-b413-ceba46665936
-- flow: xtls-rprx-vision
-  name: '[JP] 02 - 1.8MB/s'
-  port: 443
-  server: jp9.443e206c-664c-7f0f-0128-5a86270b88f1.5d577b1e.the-best-airport.com
-  servername: baidu.com
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: d7a9e66a-fc7f-4d58-b413-ceba46665936
-- name: '[RU] 01 - 1.8MB/s'
-  password: null
-  port: 1446
-  server: 46.29.166.134
-  skip-cert-verify: true
-  tls: true
+  tls: false
   type: http
-- name: '[SG] 01 - 3.5MB/s'
-  password: '1234'
-  port: 2080
-  server: 47.129.155.166
+  udp: true
+- name: '[TW] 01 - 2.8MB/s'
+  password: 0324fbc29561
+  port: 443
+  server: 684616s4.df6h451rh.xin
   skip-cert-verify: true
-  type: http
+  sni: px.ads.linkedin.com
+  type: anytls
+  udp: true
+- name: '[TW] 02 - 2.2MB/s'
+  password: 0324fbc29561
+  port: 443
+  server: er8u54dh.df6h451rh.xin
+  skip-cert-verify: true
+  sni: px.ads.linkedin.com
+  type: anytls
+  udp: true
 proxy-groups:
 - name: PROXY
   type: select
@@ -85,20 +60,16 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - '[FR] 01 - 3.1MB/s'
-  - '[FR] 02 - 2.6MB/s'
-  - '[FR] 03 - 1.9MB/s'
-  - '[HK] 01 - 2.5MB/s'
-  - '[ID] 01 - 2.4MB/s'
-  - '[JP] 01 - 2.5MB/s'
-  - '[JP] 02 - 1.8MB/s'
-  - '[RU] 01 - 1.8MB/s'
-  - '[SG] 01 - 3.5MB/s'
+  - '[HK] 01 - 2.9MB/s'
+  - '[HK] 02 - 2.5MB/s'
+  - '[JP] 01 - 2.3MB/s'
+  - '[TW] 01 - 2.8MB/s'
+  - '[TW] 02 - 2.2MB/s'
 - name: Spotify-JP
   type: select
   proxies:
-  - '[JP] 01 - 2.5MB/s'
-  - '[JP] 02 - 1.8MB/s'
+  - '[JP] 01 - 2.3MB/s'
+  - '[JP] 02 - 648KB/s'
 - name: FALLBACK
   type: select
   proxies:
