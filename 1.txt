@@ -7,34 +7,33 @@ unified-delay: true
 tcp-concurrent: true
 global-client-fingerprint: chrome
 proxies:
-- name: '[FR] 01 - 2.6MB/s'
+- name: '[FR] 01 - 3.1MB/s'
+  password: '1234'
+  port: 2080
+  server: 54.151.242.187
+  skip-cert-verify: true
+  type: http
+- name: '[FR] 02 - 2.6MB/s'
   password: None
   port: 443
   server: 51.210.167.149
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[FR] 02 - 2.1MB/s'
-  port: 443
-  server: 141.94.16.4
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[FR] 03 - 2.1MB/s'
+- name: '[FR] 03 - 1.9MB/s'
   port: 443
   server: 103.82.101.43
   skip-cert-verify: true
   sni: 76d1d3ecadca44efa2339867d7dfc9a1-8e928736d0f8dbdc.apache-iv.com
   tls: true
   type: http
-- name: '[FR] 04 - 2.0MB/s'
-  port: 4443
-  server: 83.172.143.53
+- name: '[HK] 01 - 2.5MB/s'
+  port: 31343
+  server: 120.232.204.58
   skip-cert-verify: true
   tls: true
   type: http
-  udp: true
-- name: '[ID] 01 - 3.1MB/s'
+- name: '[ID] 01 - 2.4MB/s'
   port: 443
   server: 178.248.73.58
   skip-cert-verify: true
@@ -42,9 +41,9 @@ proxies:
   type: http
   udp: true
 - flow: xtls-rprx-vision
-  name: '[JP] 01 - 3.0MB/s'
+  name: '[JP] 01 - 2.5MB/s'
   port: 443
-  server: jp2.443e206c-664c-7f0f-0128-5a86270b88f1.947c438c.the-best-airport.com
+  server: jp3.443e206c-664c-7f0f-0128-5a86270b88f1.48d6ae8e.the-best-airport.com
   servername: baidu.com
   skip-cert-verify: true
   tls: true
@@ -52,17 +51,7 @@ proxies:
   udp: true
   uuid: d7a9e66a-fc7f-4d58-b413-ceba46665936
 - flow: xtls-rprx-vision
-  name: '[JP] 02 - 2.3MB/s'
-  port: 443
-  server: jp10.443e206c-664c-7f0f-0128-5a86270b88f1.578e7179.the-best-airport.com
-  servername: baidu.com
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: d7a9e66a-fc7f-4d58-b413-ceba46665936
-- flow: xtls-rprx-vision
-  name: '[JP] 03 - 2.2MB/s'
+  name: '[JP] 02 - 1.8MB/s'
   port: 443
   server: jp9.443e206c-664c-7f0f-0128-5a86270b88f1.5d577b1e.the-best-airport.com
   servername: baidu.com
@@ -71,6 +60,19 @@ proxies:
   type: vless
   udp: true
   uuid: d7a9e66a-fc7f-4d58-b413-ceba46665936
+- name: '[RU] 01 - 1.8MB/s'
+  password: null
+  port: 1446
+  server: 46.29.166.134
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[SG] 01 - 3.5MB/s'
+  password: '1234'
+  port: 2080
+  server: 47.129.155.166
+  skip-cert-verify: true
+  type: http
 proxy-groups:
 - name: PROXY
   type: select
@@ -83,14 +85,20 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - '[FR] 01 - 2.6MB/s'
-  - '[FR] 02 - 2.1MB/s'
-  - '[FR] 03 - 2.1MB/s'
-  - '[FR] 04 - 2.0MB/s'
-  - '[ID] 01 - 3.1MB/s'
-  - '[JP] 01 - 3.0MB/s'
-  - '[JP] 02 - 2.3MB/s'
-  - '[JP] 03 - 2.2MB/s'
+  - '[FR] 01 - 3.1MB/s'
+  - '[FR] 02 - 2.6MB/s'
+  - '[FR] 03 - 1.9MB/s'
+  - '[HK] 01 - 2.5MB/s'
+  - '[ID] 01 - 2.4MB/s'
+  - '[JP] 01 - 2.5MB/s'
+  - '[JP] 02 - 1.8MB/s'
+  - '[RU] 01 - 1.8MB/s'
+  - '[SG] 01 - 3.5MB/s'
+- name: Spotify-JP
+  type: select
+  proxies:
+  - '[JP] 01 - 2.5MB/s'
+  - '[JP] 02 - 1.8MB/s'
 - name: FALLBACK
   type: select
   proxies:
@@ -112,6 +120,10 @@ rule-providers:
 rules:
 - GEOSITE,private,DIRECT
 - GEOIP,private,DIRECT,no-resolve
+- GEOSITE,spotify,Spotify-JP
+- DOMAIN-SUFFIX,spotify.com,Spotify-JP
+- DOMAIN-SUFFIX,scdn.co,Spotify-JP
+- DOMAIN-SUFFIX,spotifycdn.com,Spotify-JP
 - GEOSITE,category-ai-!cn,PROXY
 - GEOSITE,gfw,PROXY
 - RULE-SET,Custom_Proxy_Domain,PROXY
