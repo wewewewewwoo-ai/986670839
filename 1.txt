@@ -7,113 +7,75 @@ unified-delay: true
 tcp-concurrent: true
 global-client-fingerprint: chrome
 proxies:
-- client-fingerprint: chrome
-  name: '[DE] 01 - 1.4MB/s'
-  network: tcp
+- name: '[DE] 01 - 827KB/s'
   port: 443
-  server: de-ads.th3team.ir
-  servername: blog.ir
-  tls: true
-  type: vless
-  udp: true
-  uuid: e2e6f62b-3913-4413-a877-995675637374
-- name: '[DE] 02 - 1.3MB/s'
-  port: 9002
-  server: 158.173.154.1
+  server: 87.106.223.158
   skip-cert-verify: true
   tls: true
   type: http
-  udp: true
-- name: '[DE] 03 - 1.3MB/s'
-  port: 9002
-  server: 158.173.154.5
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: '[DE] 04 - 1.3MB/s'
-  password: None
-  port: 9002
-  server: 158.173.154.1
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: '[DE] 05 - 1.3MB/s'
-  password: null
-  port: 9002
-  server: 158.173.154.4
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[DE] 06 - 1.3MB/s'
-  password: null
-  port: 9002
-  server: 158.173.154.2
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[DE] 07 - 1.2MB/s'
-  port: 443
-  server: 213.109.163.119
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: '[FR] 01 - 1.3MB/s'
-  port: 443
-  server: 103.82.101.43
-  skip-cert-verify: true
-  sni: 76d1d3ecadca44efa2339867d7dfc9a1-8e928736d0f8dbdc.apache-iv.com
-  tls: true
-  type: http
-- name: '[FR] 02 - 1.2MB/s'
-  port: 6103
-  server: 87.98.174.157
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[HK] 01 - 2.9MB/s'
+- name: '[HK] 01 - 2.4MB/s'
   port: 31343
   server: 120.232.204.58
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[JP] 01 - 2.3MB/s'
+- name: '[IN] 01 - 842KB/s'
+  port: 443
+  server: 3.111.253.23
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[JP] 01 - 1.8MB/s'
   port: 40583
   server: 120.232.204.58
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
-- name: '[JP] 02 - 699KB/s'
-  port: 8080
-  server: 139.162.78.109
+- name: '[NL] 01 - 842KB/s'
+  port: 9002
+  server: 84.17.47.126
   skip-cert-verify: true
-  tls: false
+  tls: true
   type: http
   udp: true
-- name: '[KR] 01 - 2.4MB/s'
-  port: 1080
-  server: 183.106.215.208
+- name: '[NL] 02 - 829KB/s'
+  port: 1443
+  server: 45.154.87.85
   skip-cert-verify: true
-  type: socks5
+  tls: true
+  type: http
+  udp: true
+- name: '[NL] 03 - 826KB/s'
+  password: null
+  port: 9002
+  server: 84.17.47.148
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[NL] 04 - 801KB/s'
+  port: 9002
+  server: 84.17.47.123
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[TW] 01 - 3.1MB/s'
+  port: 42533
+  server: 47.243.181.85
+  skip-cert-verify: true
+  tls: true
+  type: http
   udp: true
 - client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: '[SG] 01 - 1.5MB/s'
-  network: tcp
-  port: 19825
-  reality-opts:
-    public-key: GvvkY8xYb9QjvwvzYq_uNC4tOGd0DCxRnz6770-xgkI
-    short-id: 6ba85179e30d4fc2
-  server: sg2-8sb.6121999.dpdns.org
-  servername: sg2-8sb.6121999.dpdns.org
-  tls: true
-  type: vless
-  udp: true
-  uuid: 2d1ad594-80a4-4bfb-87a6-038e39701f51
-- name: '[TW] 01 - 2.3MB/s'
+  name: '[TW] 02 - 2.1MB/s'
+  password: 0324fbc29561
+  port: 443
+  server: 684616s4.df6h451rh.xin
+  skip-cert-verify: true
+  sni: px.ads.linkedin.com
+  type: anytls
+- name: '[TW] 03 - 1.5MB/s'
   password: 0324fbc29561
   port: 443
   server: er8u54dh.df6h451rh.xin
@@ -121,14 +83,13 @@ proxies:
   sni: px.ads.linkedin.com
   type: anytls
   udp: true
-- name: '[TW] 02 - 2.1MB/s'
-  password: 0324fbc29561
-  port: 443
-  server: 684616s4.df6h451rh.xin
+- name: '[US] 01 - 1.0MB/s'
+  password: None
+  port: 8443
+  server: 44.229.69.166
   skip-cert-verify: true
-  sni: px.ads.linkedin.com
-  type: anytls
-  udp: true
+  tls: true
+  type: http
 proxy-groups:
 - name: PROXY
   type: select
@@ -141,26 +102,22 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - '[DE] 01 - 1.4MB/s'
-  - '[DE] 02 - 1.3MB/s'
-  - '[DE] 03 - 1.3MB/s'
-  - '[DE] 04 - 1.3MB/s'
-  - '[DE] 05 - 1.3MB/s'
-  - '[DE] 06 - 1.3MB/s'
-  - '[DE] 07 - 1.2MB/s'
-  - '[FR] 01 - 1.3MB/s'
-  - '[FR] 02 - 1.2MB/s'
-  - '[HK] 01 - 2.9MB/s'
-  - '[JP] 01 - 2.3MB/s'
-  - '[KR] 01 - 2.4MB/s'
-  - '[SG] 01 - 1.5MB/s'
-  - '[TW] 01 - 2.3MB/s'
+  - '[DE] 01 - 827KB/s'
+  - '[HK] 01 - 2.4MB/s'
+  - '[IN] 01 - 842KB/s'
+  - '[JP] 01 - 1.8MB/s'
+  - '[NL] 01 - 842KB/s'
+  - '[NL] 02 - 829KB/s'
+  - '[NL] 03 - 826KB/s'
+  - '[NL] 04 - 801KB/s'
+  - '[TW] 01 - 3.1MB/s'
   - '[TW] 02 - 2.1MB/s'
+  - '[TW] 03 - 1.5MB/s'
+  - '[US] 01 - 1.0MB/s'
 - name: Spotify-JP
   type: select
   proxies:
-  - '[JP] 01 - 2.3MB/s'
-  - '[JP] 02 - 699KB/s'
+  - '[JP] 01 - 1.8MB/s'
 - name: FALLBACK
   type: select
   proxies:
