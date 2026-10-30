@@ -7,84 +7,90 @@ unified-delay: true
 tcp-concurrent: true
 global-client-fingerprint: chrome
 proxies:
-- name: '[FR] 01 - 1.7MB/s'
+- name: '[DE] 01 - 2.2MB/s'
+  password: None
   port: 443
-  server: 82.65.162.76
+  server: 87.106.223.158
   skip-cert-verify: true
   tls: true
   type: http
-  udp: true
-- name: '[FR] 02 - 1.6MB/s'
+- name: '[DE] 02 - 1.8MB/s'
+  password: null
+  port: 443
+  server: 146.70.221.18
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[DE] 03 - 1.6MB/s'
+  password: None
+  port: 443
+  server: 79.76.126.155
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[DE] 04 - 1.6MB/s'
+  password: null
+  port: 443
+  server: 149.36.50.129
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[DE] 05 - 1.5MB/s'
+  password: None
+  port: 9002
+  server: 158.173.154.2
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[FR] 01 - 2.5MB/s'
   password: null
   port: 443
   server: 51.210.167.149
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[FR] 03 - 1.6MB/s'
-  port: 443
-  server: 141.94.16.4
+- name: '[FR] 02 - 1.6MB/s'
+  password: freeuser1
+  port: 9251
+  server: fr017.freeconnect.link
+  skip-cert-verify: true
+  sni: fr017.freeconnect.link
+  tls: true
+  type: http
+- name: '[HK] 01 - 1.7MB/s'
+  port: 31343
+  server: 120.232.204.58
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[ID] 01 - 2.1MB/s'
+- name: '[ID] 01 - 2.0MB/s'
   port: 443
   server: 178.248.73.58
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
-- name: '[IE] 01 - 1.8MB/s'
-  password: None
+- name: '[IE] 01 - 2.3MB/s'
   port: 443
   server: 18.200.158.139
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[IN] 01 - 2.6MB/s'
+- name: '[IE] 02 - 1.5MB/s'
   port: 443
-  server: 3.111.253.23
+  server: 34.249.214.108
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
-- name: '[IN] 02 - 2.0MB/s'
-  port: 443
-  server: 110.173.188.221
+- name: '[JP] 01 - 3.7MB/s'
+  password: None
+  port: 343
+  server: 133.18.200.207
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[IN] 03 - 1.5MB/s'
-  password: 5t6i121em5lkmsmk
-  port: 42733
-  server: in002.zestapp778.com
-  skip-cert-verify: false
-  sni: in002.zestapp778.com
-  type: trojan
-  udp: true
-- name: '[JP] 01 - 3.8MB/s'
-  password: 6cddea99-9b18-4d42-8638-131bd9f5374f
-  port: 443
-  server: jp1.8b1c7c70-ecf1-6891-9fa7-68a86662f902.cheathub.net
-  skip-cert-verify: true
-  sni: 8b1c7c70-ecf1-6891-9fa7-68a86662f902.cheathub.net
-  type: trojan
-  udp: true
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: '[JP] 02 - 3.8MB/s'
-  network: tcp
-  port: 9443
-  reality-opts:
-    public-key: 0hIFPaEn4RdFib8_eP8HYxMywR5izEwM3JA2W1Zo8U4
-    short-id: b390142456517acc
-  server: 45.202.255.92
-  servername: www.amazon.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 4a270d3e-27b4-497d-8c8c-28f1f54958d9
-- name: '[KR] 01 - 4.9MB/s'
+- name: '[KR] 01 - 5.1MB/s'
   password: 3637190e-4ce3-41cd-9425-f5676345b38c
   port: 12308
   server: 3.34.91.121
@@ -92,97 +98,101 @@ proxies:
   sni: kr02.ulifeai.com
   type: trojan
   udp: true
-- name: '[LT] 01 - 1.6MB/s'
+- name: '[LT] 01 - 2.0MB/s'
   port: 443
   server: 89.124.11.9
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[LV] 01 - 1.7MB/s'
-  port: 1080
-  server: 195.135.255.98
-  type: socks5
 - name: '[NL] 01 - 1.8MB/s'
-  port: 443
-  server: 185.246.153.28
-  skip-cert-verify: true
-  sni: 4a8c2906c96058315dffbc2b0e7ff19b-0c66a58858a795df.apache-iv.com
-  tls: true
-  type: http
-- name: '[RU] 01 - 1.8MB/s'
-  password: null
-  port: 8443
-  server: 87.242.85.187
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[RU] 02 - 1.8MB/s'
-  password: None
-  port: 1446
-  server: 46.29.166.134
-  skip-cert-verify: true
-  tls: true
-  type: http
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: '[SG] 01 - 1.6MB/s'
-  network: tcp
-  port: 9443
-  reality-opts:
-    public-key: 0hIFPaEn4RdFib8_eP8HYxMywR5izEwM3JA2W1Zo8U4
-    short-id: b390142456517acc
-  server: 149.33.30.40
-  servername: www.amazon.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 4a270d3e-27b4-497d-8c8c-28f1f54958d9
-- name: '[UK] 01 - 3.2MB/s'
   password: 'null'
   port: 443
-  server: 178.248.73.58
+  server: 157.22.183.72
+  tls: true
+  type: http
+- name: '[NL] 02 - 1.7MB/s'
+  password: 'null'
+  port: 443
+  server: 185.140.209.235
   skip-cert-verify: true
   tls: true
   type: http
-- client-fingerprint: ios
+  udp: true
+- client-fingerprint: chrome
   flow: xtls-rprx-vision
-  name: '[US] 01 - 1.7MB/s'
+  name: '[NL] 03 - 1.5MB/s'
   network: tcp
-  port: 443
+  port: 43000
   reality-opts:
-    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
-    short-id: c39cc7310a
-  server: 169.40.42.104
-  servername: yahoo.com
+    public-key: pR4VpawT5rTi2LKtKvRtAiaW5p1ZGRNiao6_5TAkawI
+    short-id: c6552fdd
+  server: 94.249.195.81
   tls: true
   type: vless
-  udp: true
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-- client-fingerprint: random
-  flow: xtls-rprx-vision
-  name: '[US] 02 - 1.7MB/s'
-  network: tcp
+  uuid: 6ddd64ac-972b-4809-8399-9ada51b64837
+- name: '[RS] 01 - 2.0MB/s'
   port: 443
-  reality-opts:
-    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
-    short-id: c39cc7310a
-  server: 169.40.42.89
-  servername: yahoo.com
+  server: 146.70.221.34
+  skip-cert-verify: true
   tls: true
-  type: vless
+  type: http
+- name: '[SE] 01 - 2.4MB/s'
+  port: 39811
+  server: 176.111.37.216
+  type: http
+- name: '[TW] 01 - 2.0MB/s'
+  password: 04de3d54-2c09-4c35-9e33-1eccbb11a25e
+  port: 17825
+  server: aktw.prepop.online
+  skip-cert-verify: true
+  sni: aktw.prepop.online
+  type: anytls
   udp: true
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-- name: '[US] 03 - 1.7MB/s'
+- name: '[US] 01 - 2.1MB/s'
+  password: None
+  port: 8443
+  server: 44.248.167.117
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[US] 02 - 1.8MB/s'
   port: 8443
   server: 44.248.167.117
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
-- name: '[US] 04 - 1.5MB/s'
+- name: '[US] 03 - 1.7MB/s'
+  port: 443
+  server: 24.225.10.211
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- client-fingerprint: ios
+  flow: xtls-rprx-vision
+  name: '[US] 04 - 1.5MB/s'
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
+    short-id: c39cc7310a
+  server: 169.40.42.202
+  servername: yahoo.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+- name: '[US] 05 - 1.5MB/s'
   password: None
   port: 8443
-  server: 44.229.69.166
+  server: 44.217.145.28
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[US] 06 - 1.5MB/s'
+  port: 443
+  server: 96.5.129.85
   skip-cert-verify: true
   tls: true
   type: http
@@ -198,33 +208,36 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - '[FR] 01 - 1.7MB/s'
+  - '[DE] 01 - 2.2MB/s'
+  - '[DE] 02 - 1.8MB/s'
+  - '[DE] 03 - 1.6MB/s'
+  - '[DE] 04 - 1.6MB/s'
+  - '[DE] 05 - 1.5MB/s'
+  - '[FR] 01 - 2.5MB/s'
   - '[FR] 02 - 1.6MB/s'
-  - '[FR] 03 - 1.6MB/s'
-  - '[ID] 01 - 2.1MB/s'
-  - '[IE] 01 - 1.8MB/s'
-  - '[IN] 01 - 2.6MB/s'
-  - '[IN] 02 - 2.0MB/s'
-  - '[IN] 03 - 1.5MB/s'
-  - '[JP] 01 - 3.8MB/s'
-  - '[JP] 02 - 3.8MB/s'
-  - '[KR] 01 - 4.9MB/s'
-  - '[LT] 01 - 1.6MB/s'
-  - '[LV] 01 - 1.7MB/s'
+  - '[HK] 01 - 1.7MB/s'
+  - '[ID] 01 - 2.0MB/s'
+  - '[IE] 01 - 2.3MB/s'
+  - '[IE] 02 - 1.5MB/s'
+  - '[JP] 01 - 3.7MB/s'
+  - '[KR] 01 - 5.1MB/s'
+  - '[LT] 01 - 2.0MB/s'
   - '[NL] 01 - 1.8MB/s'
-  - '[RU] 01 - 1.8MB/s'
-  - '[RU] 02 - 1.8MB/s'
-  - '[SG] 01 - 1.6MB/s'
-  - '[UK] 01 - 3.2MB/s'
-  - '[US] 01 - 1.7MB/s'
-  - '[US] 02 - 1.7MB/s'
+  - '[NL] 02 - 1.7MB/s'
+  - '[NL] 03 - 1.5MB/s'
+  - '[RS] 01 - 2.0MB/s'
+  - '[SE] 01 - 2.4MB/s'
+  - '[TW] 01 - 2.0MB/s'
+  - '[US] 01 - 2.1MB/s'
+  - '[US] 02 - 1.8MB/s'
   - '[US] 03 - 1.7MB/s'
   - '[US] 04 - 1.5MB/s'
+  - '[US] 05 - 1.5MB/s'
+  - '[US] 06 - 1.5MB/s'
 - name: Spotify-JP
   type: select
   proxies:
-  - '[JP] 01 - 3.8MB/s'
-  - '[JP] 02 - 3.8MB/s'
+  - '[JP] 01 - 3.7MB/s'
 - name: FALLBACK
   type: select
   proxies:
