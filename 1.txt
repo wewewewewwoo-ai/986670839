@@ -7,110 +7,148 @@ unified-delay: true
 tcp-concurrent: true
 global-client-fingerprint: chrome
 proxies:
-- name: '[DE] 01 - 2.2MB/s'
-  password: None
-  port: 443
-  server: 87.106.223.158
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[DE] 02 - 1.8MB/s'
-  password: null
-  port: 443
-  server: 146.70.221.18
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[DE] 03 - 1.6MB/s'
-  password: None
-  port: 443
-  server: 79.76.126.155
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[DE] 04 - 1.6MB/s'
-  password: null
-  port: 443
-  server: 149.36.50.129
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[DE] 05 - 1.5MB/s'
-  password: None
-  port: 9002
-  server: 158.173.154.2
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[FR] 01 - 2.5MB/s'
+- name: '[FR] 01 - 2.3MB/s'
   password: null
   port: 443
   server: 51.210.167.149
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[FR] 02 - 1.6MB/s'
-  password: freeuser1
-  port: 9251
-  server: fr017.freeconnect.link
-  skip-cert-verify: true
-  sni: fr017.freeconnect.link
-  tls: true
-  type: http
-- name: '[HK] 01 - 1.7MB/s'
-  port: 31343
-  server: 120.232.204.58
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[ID] 01 - 2.0MB/s'
+- name: '[FR] 02 - 1.7MB/s'
   port: 443
-  server: 178.248.73.58
+  server: 141.94.16.4
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[FR] 03 - 1.2MB/s'
+  password: 'null'
+  port: 6103
+  server: 87.98.174.157
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[IN] 01 - 2.2MB/s'
+  port: 443
+  server: 3.111.253.23
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
-- name: '[IE] 01 - 2.3MB/s'
-  port: 443
-  server: 18.200.158.139
+- name: '[JP] 01 - 2.8MB/s'
+  password: null
+  port: 343
+  server: 133.18.200.207
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[IE] 02 - 1.5MB/s'
+- flow: xtls-rprx-vision
+  name: '[JP] 02 - 2.4MB/s'
   port: 443
-  server: 34.249.214.108
+  server: jp1.443e206c-664c-7f0f-0128-5a86270b88f1.2516ef7d.the-best-airport.com
+  servername: baidu.com
   skip-cert-verify: true
   tls: true
-  type: http
+  type: vless
   udp: true
-- name: '[JP] 01 - 3.7MB/s'
+  uuid: eba59be8-aa8a-4fc5-9732-d692d2d7488b
+- flow: xtls-rprx-vision
+  name: '[JP] 03 - 2.2MB/s'
+  port: 443
+  server: jp2.443e206c-664c-7f0f-0128-5a86270b88f1.947c438c.the-best-airport.com
+  servername: baidu.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: eba59be8-aa8a-4fc5-9732-d692d2d7488b
+- name: '[JP] 04 - 1.9MB/s'
   password: None
   port: 343
   server: 133.18.200.207
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[KR] 01 - 5.1MB/s'
-  password: 3637190e-4ce3-41cd-9425-f5676345b38c
-  port: 12308
-  server: 3.34.91.121
+- flow: xtls-rprx-vision
+  name: '[JP] 05 - 1.7MB/s'
+  port: 443
+  server: jp4.443e206c-664c-7f0f-0128-5a86270b88f1.f7ef41be.the-best-airport.com
+  servername: baidu.com
   skip-cert-verify: true
-  sni: kr02.ulifeai.com
-  type: trojan
+  tls: true
+  type: vless
   udp: true
-- name: '[LT] 01 - 2.0MB/s'
+  uuid: eba59be8-aa8a-4fc5-9732-d692d2d7488b
+- flow: xtls-rprx-vision
+  name: '[JP] 06 - 1.5MB/s'
   port: 443
-  server: 89.124.11.9
+  server: jp5.443e206c-664c-7f0f-0128-5a86270b88f1.e2e2f7b1.the-best-airport.com
+  servername: baidu.com
   skip-cert-verify: true
   tls: true
-  type: http
-- name: '[NL] 01 - 1.8MB/s'
-  password: 'null'
+  type: vless
+  udp: true
+  uuid: eba59be8-aa8a-4fc5-9732-d692d2d7488b
+- flow: xtls-rprx-vision
+  name: '[JP] 07 - 1.5MB/s'
   port: 443
-  server: 157.22.183.72
+  server: jp6.443e206c-664c-7f0f-0128-5a86270b88f1.3e516126.the-best-airport.com
+  servername: baidu.com
+  skip-cert-verify: true
   tls: true
-  type: http
-- name: '[NL] 02 - 1.7MB/s'
+  type: vless
+  udp: true
+  uuid: eba59be8-aa8a-4fc5-9732-d692d2d7488b
+- flow: xtls-rprx-vision
+  name: '[JP] 08 - 1.5MB/s'
+  port: 443
+  server: jp10.443e206c-664c-7f0f-0128-5a86270b88f1.578e7179.the-best-airport.com
+  servername: baidu.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: eba59be8-aa8a-4fc5-9732-d692d2d7488b
+- flow: xtls-rprx-vision
+  name: '[JP] 09 - 1.4MB/s'
+  port: 443
+  server: jp8.443e206c-664c-7f0f-0128-5a86270b88f1.26ddb39f.the-best-airport.com
+  servername: baidu.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: eba59be8-aa8a-4fc5-9732-d692d2d7488b
+- flow: xtls-rprx-vision
+  name: '[JP] 10 - 1.4MB/s'
+  port: 443
+  server: jp7.443e206c-664c-7f0f-0128-5a86270b88f1.1735808b.the-best-airport.com
+  servername: baidu.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: eba59be8-aa8a-4fc5-9732-d692d2d7488b
+- flow: xtls-rprx-vision
+  name: '[JP] 11 - 1.4MB/s'
+  port: 443
+  server: jp3.443e206c-664c-7f0f-0128-5a86270b88f1.48d6ae8e.the-best-airport.com
+  servername: baidu.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: eba59be8-aa8a-4fc5-9732-d692d2d7488b
+- flow: xtls-rprx-vision
+  name: '[JP] 12 - 1.3MB/s'
+  port: 443
+  server: jp9.443e206c-664c-7f0f-0128-5a86270b88f1.5d577b1e.the-best-airport.com
+  servername: baidu.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: eba59be8-aa8a-4fc5-9732-d692d2d7488b
+- name: '[NL] 01 - 1.8MB/s'
   password: 'null'
   port: 443
   server: 185.140.209.235
@@ -118,9 +156,58 @@ proxies:
   tls: true
   type: http
   udp: true
+- name: '[NL] 02 - 1.8MB/s'
+  port: 5001
+  server: 149.210.158.107
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[NL] 03 - 1.7MB/s'
+  password: null
+  port: 443
+  server: 89.150.35.94
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[NL] 04 - 1.6MB/s'
+  network: ws
+  password: humanity
+  port: 443
+  server: 172.67.203.46
+  skip-cert-verify: true
+  sni: www.cordweave.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: www.cordweave.com
+    path: /assignment
+- name: '[NL] 05 - 1.5MB/s'
+  port: 9002
+  server: 84.17.47.124
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[NL] 06 - 1.4MB/s'
+  port: 23856
+  server: 51.159.225.196
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[NL] 07 - 1.3MB/s'
+  password: 'null'
+  port: 23856
+  server: 51.159.225.196
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
 - client-fingerprint: chrome
   flow: xtls-rprx-vision
-  name: '[NL] 03 - 1.5MB/s'
+  name: '[NL] 08 - 1.3MB/s'
   network: tcp
   port: 43000
   reality-opts:
@@ -130,17 +217,21 @@ proxies:
   tls: true
   type: vless
   uuid: 6ddd64ac-972b-4809-8399-9ada51b64837
-- name: '[RS] 01 - 2.0MB/s'
+- name: '[SE] 01 - 1.2MB/s'
   port: 443
-  server: 146.70.221.34
+  server: 217.210.129.243
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[SE] 01 - 2.4MB/s'
-  port: 39811
-  server: 176.111.37.216
+- name: '[SG] 01 - 1.7MB/s'
+  port: 9090
+  server: 128.199.116.219
   type: http
-- name: '[TW] 01 - 2.0MB/s'
+- name: '[SG] 02 - 1.7MB/s'
+  port: 9090
+  server: 128.199.121.61
+  type: http
+- name: '[TW] 01 - 1.3MB/s'
   password: 04de3d54-2c09-4c35-9e33-1eccbb11a25e
   port: 17825
   server: aktw.prepop.online
@@ -148,51 +239,45 @@ proxies:
   sni: aktw.prepop.online
   type: anytls
   udp: true
-- name: '[US] 01 - 2.1MB/s'
+- name: '[US] 01 - 2.2MB/s'
   password: None
   port: 8443
   server: 44.248.167.117
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[US] 02 - 1.8MB/s'
+- name: '[US] 02 - 2.0MB/s'
+  password: None
+  port: 8443
+  server: 44.229.69.166
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[US] 03 - 1.9MB/s'
   port: 8443
   server: 44.248.167.117
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
-- name: '[US] 03 - 1.7MB/s'
-  port: 443
-  server: 24.225.10.211
+- name: '[US] 04 - 1.7MB/s'
+  password: None
+  port: 9002
+  server: 138.199.35.216
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
-- client-fingerprint: ios
-  flow: xtls-rprx-vision
-  name: '[US] 04 - 1.5MB/s'
-  network: tcp
+- name: '[US] 05 - 1.6MB/s'
   port: 443
-  reality-opts:
-    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
-    short-id: c39cc7310a
-  server: 169.40.42.202
-  servername: yahoo.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-- name: '[US] 05 - 1.5MB/s'
-  password: None
-  port: 8443
-  server: 44.217.145.28
+  server: 96.5.129.85
   skip-cert-verify: true
   tls: true
   type: http
 - name: '[US] 06 - 1.5MB/s'
-  port: 443
-  server: 96.5.129.85
+  password: None
+  port: 8443
+  server: 44.217.145.28
   skip-cert-verify: true
   tls: true
   type: http
@@ -208,36 +293,55 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - '[DE] 01 - 2.2MB/s'
-  - '[DE] 02 - 1.8MB/s'
-  - '[DE] 03 - 1.6MB/s'
-  - '[DE] 04 - 1.6MB/s'
-  - '[DE] 05 - 1.5MB/s'
-  - '[FR] 01 - 2.5MB/s'
-  - '[FR] 02 - 1.6MB/s'
-  - '[HK] 01 - 1.7MB/s'
-  - '[ID] 01 - 2.0MB/s'
-  - '[IE] 01 - 2.3MB/s'
-  - '[IE] 02 - 1.5MB/s'
-  - '[JP] 01 - 3.7MB/s'
-  - '[KR] 01 - 5.1MB/s'
-  - '[LT] 01 - 2.0MB/s'
+  - '[FR] 01 - 2.3MB/s'
+  - '[FR] 02 - 1.7MB/s'
+  - '[FR] 03 - 1.2MB/s'
+  - '[IN] 01 - 2.2MB/s'
+  - '[JP] 01 - 2.8MB/s'
+  - '[JP] 02 - 2.4MB/s'
+  - '[JP] 03 - 2.2MB/s'
+  - '[JP] 04 - 1.9MB/s'
+  - '[JP] 05 - 1.7MB/s'
+  - '[JP] 06 - 1.5MB/s'
+  - '[JP] 07 - 1.5MB/s'
+  - '[JP] 08 - 1.5MB/s'
+  - '[JP] 09 - 1.4MB/s'
+  - '[JP] 10 - 1.4MB/s'
+  - '[JP] 11 - 1.4MB/s'
+  - '[JP] 12 - 1.3MB/s'
   - '[NL] 01 - 1.8MB/s'
-  - '[NL] 02 - 1.7MB/s'
-  - '[NL] 03 - 1.5MB/s'
-  - '[RS] 01 - 2.0MB/s'
-  - '[SE] 01 - 2.4MB/s'
-  - '[TW] 01 - 2.0MB/s'
-  - '[US] 01 - 2.1MB/s'
-  - '[US] 02 - 1.8MB/s'
-  - '[US] 03 - 1.7MB/s'
-  - '[US] 04 - 1.5MB/s'
-  - '[US] 05 - 1.5MB/s'
+  - '[NL] 02 - 1.8MB/s'
+  - '[NL] 03 - 1.7MB/s'
+  - '[NL] 04 - 1.6MB/s'
+  - '[NL] 05 - 1.5MB/s'
+  - '[NL] 06 - 1.4MB/s'
+  - '[NL] 07 - 1.3MB/s'
+  - '[NL] 08 - 1.3MB/s'
+  - '[SE] 01 - 1.2MB/s'
+  - '[SG] 01 - 1.7MB/s'
+  - '[SG] 02 - 1.7MB/s'
+  - '[TW] 01 - 1.3MB/s'
+  - '[US] 01 - 2.2MB/s'
+  - '[US] 02 - 2.0MB/s'
+  - '[US] 03 - 1.9MB/s'
+  - '[US] 04 - 1.7MB/s'
+  - '[US] 05 - 1.6MB/s'
   - '[US] 06 - 1.5MB/s'
 - name: Spotify-JP
   type: select
   proxies:
-  - '[JP] 01 - 3.7MB/s'
+  - '[JP] 01 - 2.8MB/s'
+  - '[JP] 02 - 2.4MB/s'
+  - '[JP] 03 - 2.2MB/s'
+  - '[JP] 04 - 1.9MB/s'
+  - '[JP] 05 - 1.7MB/s'
+  - '[JP] 06 - 1.5MB/s'
+  - '[JP] 07 - 1.5MB/s'
+  - '[JP] 08 - 1.5MB/s'
+  - '[JP] 09 - 1.4MB/s'
+  - '[JP] 10 - 1.4MB/s'
+  - '[JP] 11 - 1.4MB/s'
+  - '[JP] 12 - 1.3MB/s'
 - name: FALLBACK
   type: select
   proxies:
