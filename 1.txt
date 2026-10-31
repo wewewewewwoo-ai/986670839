@@ -7,27 +7,133 @@ unified-delay: true
 tcp-concurrent: true
 global-client-fingerprint: chrome
 proxies:
-- name: '[JP] 01 - 896KB/s'
-  port: 40583
-  server: 120.232.204.58
+- name: '[CA] 01 - 709KB/s'
+  password: null
+  port: 443
+  server: 4.172.245.121
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[DE] 01 - 759KB/s'
+  password: None
+  port: 443
+  server: 87.106.223.158
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[FR] 01 - 2.0MB/s'
+  password: '1234'
+  port: 2080
+  server: 54.151.160.36
+  skip-cert-verify: true
+  type: http
+- name: '[FR] 02 - 749KB/s'
+  port: 4443
+  server: 83.172.143.53
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
-- name: '[JP] 02 - 401KB/s'
-  password: None
-  port: 343
-  server: 133.18.200.207
+- name: '[FR] 03 - 710KB/s'
+  port: 8090
+  server: 80.124.109.22
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[KR] 01 - 1.4MB/s'
+- name: '[IN] 01 - 888KB/s'
+  port: 443
+  server: 3.111.253.23
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[NL] 01 - 952KB/s'
+  port: 9002
+  server: 84.17.47.124
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[NL] 02 - 928KB/s'
+  port: 9002
+  server: 84.17.47.125
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[NL] 03 - 926KB/s'
+  network: ws
+  password: humanity
+  port: 443
+  server: 213.165.55.4
+  skip-cert-verify: true
+  sni: www.cordweave.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: www.cordweave.com
+    path: /assignment
+- name: '[NL] 04 - 912KB/s'
+  password: 'null'
+  port: 443
+  server: 103.97.88.154
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[NL] 05 - 827KB/s'
+  password: 'null'
+  port: 9002
+  server: 84.17.47.146
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[NL] 06 - 794KB/s'
+  port: 1443
+  server: 45.154.87.85
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[NL] 07 - 745KB/s'
+  password: None
+  port: 9002
+  server: 84.17.47.149
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[NL] 08 - 732KB/s'
+  port: 9002
+  server: 84.17.47.149
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[NL] 09 - 719KB/s'
+  password: None
+  port: 9002
+  server: 84.17.47.146
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[SG] 01 - 789KB/s'
+  password: '8888'
   port: 1080
-  server: 183.106.215.208
+  server: 47.236.168.243
   skip-cert-verify: true
   type: socks5
-  udp: true
-- name: '[TW] 01 - 1.2MB/s'
+- client-fingerprint: chrome
+  name: '[TW] 01 - 1.5MB/s'
+  password: 0324fbc29561
+  port: 443
+  server: 684616s4.df6h451rh.xin
+  skip-cert-verify: true
+  sni: px.ads.linkedin.com
+  type: anytls
+- name: '[TW] 02 - 920KB/s'
   password: 0324fbc29561
   port: 443
   server: er8u54dh.df6h451rh.xin
@@ -35,6 +141,65 @@ proxies:
   sni: px.ads.linkedin.com
   type: anytls
   udp: true
+- name: '[US] 01 - 904KB/s'
+  password: None
+  port: 9002
+  server: 138.199.35.216
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[US] 02 - 902KB/s'
+  port: 9002
+  server: 138.199.35.218
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[US] 03 - 882KB/s'
+  password: 'null'
+  port: 9002
+  server: 138.199.35.218
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[US] 04 - 879KB/s'
+  password: 'null'
+  port: 9002
+  server: 138.199.35.200
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[US] 05 - 871KB/s'
+  password: ''
+  port: 9002
+  server: 138.199.35.199
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[US] 06 - 862KB/s'
+  password: null
+  port: 443
+  server: 162.244.227.36
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[US] 07 - 831KB/s'
+  port: 7890
+  server: 88.99.38.70
+  skip-cert-verify: true
+  tls: false
+  type: http
+  udp: true
+- name: '[US] 08 - 653KB/s'
+  password: 'null'
+  port: 9002
+  server: 138.199.35.216
+  skip-cert-verify: true
+  tls: true
+  type: http
 proxy-groups:
 - name: PROXY
   type: select
@@ -47,13 +212,36 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - '[KR] 01 - 1.4MB/s'
-  - '[TW] 01 - 1.2MB/s'
+  - '[CA] 01 - 709KB/s'
+  - '[DE] 01 - 759KB/s'
+  - '[FR] 01 - 2.0MB/s'
+  - '[FR] 02 - 749KB/s'
+  - '[FR] 03 - 710KB/s'
+  - '[IN] 01 - 888KB/s'
+  - '[NL] 01 - 952KB/s'
+  - '[NL] 02 - 928KB/s'
+  - '[NL] 03 - 926KB/s'
+  - '[NL] 04 - 912KB/s'
+  - '[NL] 05 - 827KB/s'
+  - '[NL] 06 - 794KB/s'
+  - '[NL] 07 - 745KB/s'
+  - '[NL] 08 - 732KB/s'
+  - '[NL] 09 - 719KB/s'
+  - '[SG] 01 - 789KB/s'
+  - '[TW] 01 - 1.5MB/s'
+  - '[TW] 02 - 920KB/s'
+  - '[US] 01 - 904KB/s'
+  - '[US] 02 - 902KB/s'
+  - '[US] 03 - 882KB/s'
+  - '[US] 04 - 879KB/s'
+  - '[US] 05 - 871KB/s'
+  - '[US] 06 - 862KB/s'
+  - '[US] 07 - 831KB/s'
+  - '[US] 08 - 653KB/s'
 - name: Spotify-JP
   type: select
   proxies:
-  - '[JP] 01 - 896KB/s'
-  - '[JP] 02 - 401KB/s'
+  - PROXY
 - name: FALLBACK
   type: select
   proxies:
